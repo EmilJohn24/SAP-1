@@ -69,6 +69,7 @@ architecture sap1 of controller is
             FETCH1, FETCH2, FETCH3, DECODE4,
             LDA5, LDA6, LDA7, LDA8,
             STA5, STA6, STA7,
+            MVI5, MVI6,
             ADD5,
             SUB5,
             JMP5,
@@ -126,6 +127,10 @@ begin
                             nLm <= '0';
                             Ep <= '1';
                             state <= STA5;
+                        when x"22" =>
+                            nLm <='0';
+                            Ep <= '1';
+                            state <= MVI5;
                         when x"24" =>
                             nLa <= '0';
                             Eb <= '1';
@@ -236,6 +241,13 @@ begin
                     nWE <= '1';
                     Ea <= '0';
                     state <= FETCH1;
+                when MVI5 =>
+                    Cp <= '1';
+                    state <= MVI6;
+                when MVI6 =>
+                    nLc <= '0';
+                    nCE <= '0';
+                    state<= FETCH1;
                 when ADD5 =>
                     U<="0000";
                     state <= FETCH1;
