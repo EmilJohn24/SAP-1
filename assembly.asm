@@ -1,7 +1,8 @@
 MOVA $Multiplicand
 STA $Q;
 MVI C, 0x08;
-MOV B, $M
+LDA $M
+MOV B, A
 
 CHECK:
 LDA $Q;
