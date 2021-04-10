@@ -1,0 +1,44 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Apr  6 08:25:52 2021
+# Process ID: 10100
+# Current directory: C:/Users/Emil John Lopez/CPD3_Ex5_SAP
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7520 C:\Users\Emil John Lopez\CPD3_Ex5_SAP\CPD3_Ex4_SAP.xpr
+# Log file: C:/Users/Emil John Lopez/CPD3_Ex5_SAP/vivado.log
+# Journal file: C:/Users/Emil John Lopez/CPD3_Ex5_SAP\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Emil John Lopez/CPD3_Ex5_SAP/CPD3_Ex4_SAP.xpr}
+update_compile_order -fileset sources_1
+close [ open {C:/Users/Emil John Lopez/CPD3_Ex5_SAP/CPD3_Ex4_SAP.srcs/sources_1/new/ram256x8.vhd} w ]
+add_files {{C:/Users/Emil John Lopez/CPD3_Ex5_SAP/CPD3_Ex4_SAP.srcs/sources_1/new/ram256x8.vhd}}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+refresh_design
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close [ open {C:/Users/Emil John Lopez/CPD3_Ex5_SAP/CPD3_Ex4_SAP.srcs/sources_1/new/TmpReg.vhd} w ]
+add_files {{C:/Users/Emil John Lopez/CPD3_Ex5_SAP/CPD3_Ex4_SAP.srcs/sources_1/new/TmpReg.vhd}}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+refresh_design
+close [ open {C:/Users/Emil John Lopez/CPD3_Ex5_SAP/CPD3_Ex4_SAP.srcs/sources_1/new/flagReg.vhd} w ]
+add_files {{C:/Users/Emil John Lopez/CPD3_Ex5_SAP/CPD3_Ex4_SAP.srcs/sources_1/new/flagReg.vhd}}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+refresh_design
+refresh_design
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+refresh_design

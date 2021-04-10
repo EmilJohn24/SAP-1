@@ -68,10 +68,21 @@ architecture sap1 of controller is
     type STATE_T is (
             FETCH1, FETCH2, FETCH3, DECODE4,
             LDA5, LDA6, LDA7, LDA8,
+<<<<<<< HEAD
+            STA5, STA6, STA7,
+            ADD5,
+            SUB5,
+            JMP5,
+            JC5,
+            JNC5,
+            JZ5,
+            JNZ5);
+=======
             ORIANI5, ORIANI6, ORIANI7,
             RRC5,
             DEC5,
             STA5, STA6, STA7);
+>>>>>>> edc35c2f357286b85481878d82681bf9205ab330
     signal state : STATE_T := FETCH1;
 begin
     controller_fsm : process(clk, nclr) 
@@ -142,6 +153,52 @@ begin
                             nLc <= '0';
                             Eb <= '1';
                             state <= FETCH1;
+<<<<<<< HEAD
+                        when x"40" =>
+                            nLt <= '0';
+                            Eb <= '1';
+                            state <= ADD5;
+                        when x"42" =>
+                            nLt <= '0';
+                            Eb <= '1';
+                            state <= SUB5;
+                        when x"D0" =>
+                            nLm <= '0';
+                            Ep <= '1';
+                            state <= JMP5;
+                        when x"D2" =>
+                            if C = '0' then
+                                state <=FETCH1;
+                            else
+                                nLm<='0';
+                                Ep<='1';
+                                state <= JC5;
+                            end if; 
+                        when x"D3" =>
+                            if C = '1' then
+                                state <=FETCH1;
+                            else
+                                nLm<='0';
+                                Ep<='1';
+                                state <= JNC5;
+                            end if; 
+                        when x"D6" =>
+                            if Z = '0' then
+                                state <=FETCH1;
+                            else
+                                nLm<='0';
+                                Ep<='1';
+                                state <= JZ5;
+                            end if;
+                         when x"D7" =>
+                            if Z = '1' then
+                                state <=FETCH1;
+                            else
+                                nLm<='0';
+                                Ep<='1';
+                                state <= JNZ5;
+                            end if;
+=======
                         when x"34" | x"38" =>
                             nLm <= '0';
                             Ep <= '1';
@@ -154,6 +211,7 @@ begin
                             U <= "1010";
                             Lf <= '1';
                             state <= RRC5;
+>>>>>>> edc35c2f357286b85481878d82681bf9205ab330
                         when others =>
                             state <= FETCH1;
                     end case;
@@ -184,6 +242,17 @@ begin
                     nWE <= '1';
                     Ea <= '0';
                     state <= FETCH1;
+<<<<<<< HEAD
+                when ADD5 =>
+                    U<="0000";
+                    state <= FETCH1;
+                when SUB5 =>
+                    U<="0001";
+                    state <= FETCH1;
+                when JMP5 | JZ5 | JNZ5 | JC5 | JNC5=>
+                    nLp <= '0';
+                    nCE <= '0';
+=======
                 when ORIANI5 =>
                     Cp <= '1';
                     state <= ORIANI6;
@@ -199,6 +268,7 @@ begin
                         U <= "0100";
                     end if;
                     nLa <= '0';
+>>>>>>> edc35c2f357286b85481878d82681bf9205ab330
                     state <= FETCH1;
                 when DEC5 =>
                     U <= "0111";
