@@ -1,6 +1,5 @@
 # SAP-1
 Assembly Code:
-<code>
 MVI C, 0x08;
 MOV B, $M
 CHECK:
@@ -61,4 +60,3 @@ JNZ CHECK;
 HLT;
 ;00001111
 ;11010101
-</code>
