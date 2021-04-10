@@ -1,0 +1,30 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Programs/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 289434e2e2ac403fae3bc18eb19e3e33 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot SAP1_tb_behav xil_defaultlib.SAP1_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture sap1 of entity xil_defaultlib.controller [controller_default]
+Compiling architecture sap1 of entity xil_defaultlib.accreg [accreg_default]
+Compiling architecture sap1 of entity xil_defaultlib.alu [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.flagReg [flagreg_default]
+Compiling architecture sap1 of entity xil_defaultlib.breg [breg_default]
+Compiling architecture sap1 of entity xil_defaultlib.creg [creg_default]
+Compiling architecture sap1 of entity xil_defaultlib.TmpReg [tmpreg_default]
+Compiling architecture sap1 of entity xil_defaultlib.ireg [ireg_default]
+Compiling architecture sap1 of entity xil_defaultlib.memaddreg [memaddreg_default]
+Compiling architecture sap1 of entity xil_defaultlib.outreg [outreg_default]
+Compiling architecture sap1 of entity xil_defaultlib.pc [pc_default]
+Compiling architecture sap1 of entity xil_defaultlib.ram256x8 [ram256x8_default]
+Compiling architecture behavioral of entity xil_defaultlib.SAP1 [sap1_default]
+Compiling architecture bench of entity xil_defaultlib.sap1_tb
+Built simulation snapshot SAP1_tb_behav
