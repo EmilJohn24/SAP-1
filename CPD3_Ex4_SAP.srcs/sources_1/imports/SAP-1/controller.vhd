@@ -69,6 +69,7 @@ architecture sap1 of controller is
             FETCH1, FETCH2, FETCH3, DECODE4,
             LDA5, LDA6, LDA7, LDA8,
             ORIANI5, ORIANI6, ORIANI7,
+            RRC5,
             STA5, STA6, STA7);
     signal state : STATE_T := FETCH1;
 begin
@@ -144,10 +145,18 @@ begin
                             nLm <= '0';
                             Ep <= '1';
                             state <= ORIANI5;
+                        when x"78" =>
+                            U <= "1010";
+                            Lf <= '1';
+                            state <= RRC5;
                         when others =>
                             state <= FETCH1;
                     end case;
-                    
+                when RRC5 =>
+                    Lf <= '0';
+                    U(3 downto 1) <= "101";
+                    U(0) <= C; 
+                    state <= FETCH1;
                 when LDA5 =>
                     Cp <= '1';
                     state <= LDA6;

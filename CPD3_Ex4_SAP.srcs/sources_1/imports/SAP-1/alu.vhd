@@ -55,7 +55,7 @@ alu_proc : process (ain, bin, U) is
             when "0111" =>
                 result <= bin - 1;
             when "1000" | "1001" =>
-                C <= bin(7);
+                C <= ain(7);
                 result(7 downto 1) <= ain(6 downto 0);
                 result(0) <= U(0);
             when "1010" | "1011" =>
