@@ -79,6 +79,7 @@ architecture sap1 of controller is
             ORIANI5, ORIANI6, ORIANI7,
             RRC5,
             DEC5);
+
     signal state : STATE_T := FETCH1;
 begin
     controller_fsm : process(clk, nclr) 
