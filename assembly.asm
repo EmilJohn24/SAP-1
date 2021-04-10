@@ -1,5 +1,8 @@
+MOVA $Multiplicand
+STA $Q;
 MVI C, 0x08;
 MOV B, $M
+
 CHECK:
 LDA $Q;
 ANI 0x01;
@@ -20,7 +23,6 @@ ADD B;
 
 INC_COUNT:
 DEC C;
-MOV C,A;
 
 SHIFT:
 LDA $A;
