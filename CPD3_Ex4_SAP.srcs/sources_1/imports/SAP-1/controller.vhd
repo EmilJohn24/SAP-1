@@ -68,6 +68,7 @@ architecture sap1 of controller is
     type STATE_T is (
             FETCH1, FETCH2, FETCH3, DECODE4,
             LDA5, LDA6, LDA7, LDA8,
+<<<<<<< HEAD
             STA5, STA6, STA7,
             ADD5,
             SUB5,
@@ -76,6 +77,11 @@ architecture sap1 of controller is
             JNC5,
             JZ5,
             JNZ5);
+=======
+            ORIANI5, ORIANI6, ORIANI7,
+            RRC5,
+            STA5, STA6, STA7);
+>>>>>>> edc35c2f357286b85481878d82681bf9205ab330
     signal state : STATE_T := FETCH1;
 begin
     controller_fsm : process(clk, nclr) 
@@ -146,6 +152,7 @@ begin
                             nLc <= '0';
                             Eb <= '1';
                             state <= FETCH1;
+<<<<<<< HEAD
                         when x"40" =>
                             nLt <= '0';
                             Eb <= '1';
@@ -190,10 +197,24 @@ begin
                                 Ep<='1';
                                 state <= JNZ5;
                             end if;
+=======
+                        when x"34" | x"38" =>
+                            nLm <= '0';
+                            Ep <= '1';
+                            state <= ORIANI5;
+                        when x"78" =>
+                            U <= "1010";
+                            Lf <= '1';
+                            state <= RRC5;
+>>>>>>> edc35c2f357286b85481878d82681bf9205ab330
                         when others =>
                             state <= FETCH1;
                     end case;
-                    
+                when RRC5 =>
+                    Lf <= '0';
+                    U(3 downto 1) <= "101";
+                    U(0) <= C; 
+                    state <= FETCH1;
                 when LDA5 =>
                     Cp <= '1';
                     state <= LDA6;
@@ -216,6 +237,7 @@ begin
                     nWE <= '1';
                     Ea <= '0';
                     state <= FETCH1;
+<<<<<<< HEAD
                 when ADD5 =>
                     U<="0000";
                     state <= FETCH1;
@@ -225,6 +247,23 @@ begin
                 when JMP5 | JZ5 | JNZ5 | JC5 | JNC5=>
                     nLp <= '0';
                     nCE <= '0';
+=======
+                when ORIANI5 =>
+                    Cp <= '1';
+                    state <= ORIANI6;
+                when ORIANI6 =>
+                    --TMP <= RAM[MAR]
+                    nLt <= '0';
+                    nCE <= '0';
+                    state <= ORIANI7;
+                when ORIANI7 =>
+                    if inst = x"34" then 
+                        U <= "0011";
+                    elsif inst = x"38" then 
+                        U <= "0100";
+                    end if;
+                    nLa <= '0';
+>>>>>>> edc35c2f357286b85481878d82681bf9205ab330
                     state <= FETCH1;
                 when others =>
                     nHlt <= '0';
