@@ -150,7 +150,6 @@ begin
                             nLc <= '0';
                             Eb <= '1';
                             state <= FETCH1;
-
                         when x"40" =>
                             nLt <= '0';
                             Eb <= '1';
