@@ -117,6 +117,7 @@ component ram16x8 is
     Port ( nCE : in STD_LOGIC; -- enable memory output
            nWE : in STD_LOGIC; -- read/write, read if nWE = 1, write if nWE = 0
            addr : in STD_LOGIC_VECTOR (3 downto 0); -- connected to memaddreg
+           clk : in STD_LOGIC; --clock
            data : inout STD_LOGIC_VECTOR (7 downto 0)); -- connected to W bus
 end component;
 
@@ -131,6 +132,7 @@ component ram256x8 is
     Port ( nCE : in STD_LOGIC; -- enable memory output
            nWE : in STD_LOGIC; -- read/write, read if nWE = 1, write if nWE = 0
            addr : in STD_LOGIC_VECTOR (7 downto 0); -- connected to memaddreg
+           clk : in STD_LOGIC; --clock
            data : inout STD_LOGIC_VECTOR (7 downto 0)); -- connected to W bus
 end component;
 
@@ -272,6 +274,7 @@ begin
                              nCE => nCE,
                              nWE => nWE,
                              addr => memaddr,
+                             clk => clk,
                              data => wbus);
                              
     process (clk) begin

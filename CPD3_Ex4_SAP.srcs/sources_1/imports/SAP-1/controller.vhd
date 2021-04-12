@@ -54,6 +54,10 @@ architecture sap1 of controller is
     alias nLa : STD_LOGIC is cbus(14);
     alias Eu : STD_LOGIC is cbus(13);
     alias U : STD_LOGIC_VECTOR is cbus(12 downto 9);
+    alias U3 : STD_LOGIC is cbus(12);
+    alias U2 : STD_LOGIC is cbus(11);
+    alias U1 : STD_LOGIC is cbus(10);
+    alias U0 : STD_LOGIC is cbus(9);
     alias Lf : STD_LOGIC is cbus(8);
     alias Et : STD_LOGIC is cbus(7);
     alias nLt : STD_LOGIC is cbus(6);
@@ -210,14 +214,18 @@ begin
                         when x"78" =>
                             U <= "1010";
                             Lf <= '1';
+                            Eu <= '1';
                             state <= RRC5;
                         when others =>
                             state <= FETCH1;
                     end case;
                 when RRC5 =>
                     Lf <= '0';
-                    U(3 downto 1) <= "101";
+                    U3 <= '1';
+                    U2 <= '0';
+                    U1 <= '1';
                     U(0) <= C; 
+                    Eu <= '1';
                     state <= FETCH1;
                 when LDA5 =>
                     Cp <= '1';
@@ -238,8 +246,9 @@ begin
                     nCE <= '0';
                     state <= STA7;
                 when STA7 =>
-                    nWE <= '1';
-                    Ea <= '0';
+                    nWE <= '0';
+                    nCE <= '0';
+                    Ea <= '1';
                     state <= FETCH1;
                 when MVI5 =>
                     Cp <= '1';
@@ -250,13 +259,16 @@ begin
                     state<= FETCH1;
                 when ADD5 =>
                     U<="0000";
+                    Eu <= '1';
                     state <= FETCH1;
                 when SUB5 =>
                     U<="0001";
+                    Eu <= '1';
                     state <= FETCH1;
                 when JMP5 | JZ5 | JNZ5 | JC5 | JNC5=>
                     nLp <= '0';
                     nCE <= '0';
+                    state <= FETCH1;
                 when ORIANI5 =>
                     Cp <= '1';
                     state <= ORIANI6;
@@ -272,10 +284,12 @@ begin
                         U <= "0100";
                     end if;
                     nLa <= '0';
+                    Eu <= '1';
                     state <= FETCH1;
                 when DEC5 =>
                     U <= "0111";
                     nLc <= '0';
+                    Eu <= '1';
                     state <= FETCH1;
                 when others =>
                     nHlt <= '0';

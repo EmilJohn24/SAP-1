@@ -42,11 +42,9 @@ begin
     clr <= '1';
     wait for clock_period;
     clr <= '0';
-    wait for 100 * clock_period;
 
     -- Put test bench stimulus code here
 
-    stop_the_clock <= true;
     wait;
   end process;
 
