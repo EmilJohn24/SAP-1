@@ -213,19 +213,21 @@ begin
                             state <= DEC5;
                         when x"78" =>
                             U <= "1010";
-                            Lf <= '1';
                             Eu <= '1';
+                            Lf <= '1';
                             state <= RRC5;
                         when others =>
                             state <= FETCH1;
                     end case;
                 when RRC5 =>
                     Lf <= '0';
-                    U3 <= '1';
-                    U2 <= '0';
-                    U1 <= '1';
-                    U(0) <= C; 
+                    if C = '1' then
+                        U <= "1011";
+                    else
+                        U <= "1010";
+                    end if; 
                     Eu <= '1';
+                    nLa <= '0';
                     state <= FETCH1;
                 when LDA5 =>
                     Cp <= '1';

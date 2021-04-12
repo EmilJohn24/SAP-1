@@ -38,7 +38,7 @@ entity flagReg is
 end flagReg;
 
 architecture Behavioral of flagReg is
-    signal flag_reg : STD_LOGIC_VECTOR(3 downto 0);
+    signal flag_reg : STD_LOGIC_VECTOR(3 downto 0) := (others => '0');
     alias C : STD_LOGIC is flag_reg(0);
     alias Z : STD_LOGIC is flag_reg(1);
     alias S : STD_LOGIC is flag_reg(2);
