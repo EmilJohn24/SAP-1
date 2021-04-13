@@ -139,6 +139,7 @@ end component;
 component flagReg is
     Port ( Lf : in STD_LOGIC; --load flags from ALU
            aluFlagIn : in STD_LOGIC_VECTOR (3 downto 0);
+           clk : in STD_LOGIC;
            ctrlFlagOut : out STD_LOGIC_VECTOR (3 downto 0));
 end component;
     signal wbus : STD_LOGIC_VECTOR(7 downto 0);
@@ -229,6 +230,7 @@ begin
                              wbus => wbus);
      FLAGREG_Module : flagreg port map(
                              Lf => Lf,
+                             clk => clk,
                              aluFlagIn => aluFlagOut,
                              ctrlFlagOut => ctrlFlagIn);
      BREG_Module : breg port map(

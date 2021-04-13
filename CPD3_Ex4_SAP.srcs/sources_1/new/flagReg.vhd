@@ -33,6 +33,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity flagReg is
     Port ( Lf : in STD_LOGIC; --load flags from ALU
+           clk : in STD_LOGIC; --clock
            aluFlagIn : in STD_LOGIC_VECTOR (3 downto 0);
            ctrlFlagOut : out STD_LOGIC_VECTOR (3 downto 0));
 end flagReg;
@@ -44,10 +45,12 @@ architecture Behavioral of flagReg is
     alias S : STD_LOGIC is flag_reg(2);
     alias I : STD_LOGIC is flag_reg(3);
 begin
-   flag_proc : process (Lf)
+   flag_proc : process (clk)
    begin
-        if Lf = '1' then
-            flag_reg <= aluFlagIn;
+        if rising_edge(clk) then
+            if Lf = '1' then
+                flag_reg <= aluFlagIn;
+            end if;
         end if;
    end process;
    

@@ -21,54 +21,53 @@ entity alu is
 end alu;
 
 architecture sap1 of alu is
-    signal result : STD_LOGIC_VECTOR (7 downto 0);
+    signal result : STD_LOGIC_VECTOR (8 downto 0) := (others => '0');
     alias C : STD_LOGIC is flags(0);
     alias Z : STD_LOGIC is flags(1);
     alias S : STD_LOGIC is flags(2);
     alias I : STD_LOGIC is flags(3);
     
 begin
-alu_proc : process (ain, bin, U) is
-    variable tmpResult : STD_LOGIC_VECTOR(8 downto 0);
+alu_proc : process (U, ain, bin) is
+    variable ain9 : STD_LOGIC_VECTOR(8 downto 0);
+    variable bin9 : STD_LOGIC_VECTOR(8 downto 0);
     begin
+        ain9 := '0' & ain;
+        bin9 := '0' & bin;
         case U is
             when "0000" =>
                 --addition 
-                tmpResult := ('0' & ain) + ('0' & bin);
-                result <= ain + bin;
-                C <= tmpResult(8);
+                result <= ain9 + bin9;
             when "0001" =>
                 --subtraction
-                tmpResult := ('0' & ain) + not ('0' & bin) + 1;
-                result <= ain + not bin + 1;
-                C <= tmpResult(8);
+                result <= ain9 + not bin9 + 1;
             when "0010" =>
-                result <= not ain;
+                result <= not ain9;
             when "0011" =>
-                result <= ain or bin;
+                result <= ain9 or bin9;
             when "0100" =>
-                result <= ain and bin;
+                result <= ain9 and bin9;
             when "0101" =>
-                result <= ain xor bin;
+                result <= ain9 xor bin9;
             when "0110" =>
-                result <= bin + 1;
+                result <= bin9 + 1;
             when "0111" =>
-                result <= bin - 1;
+                result <= bin9 - 1;
             when "1000" | "1001" =>
-                C <= ain(7);
-                result(7 downto 1) <= ain(6 downto 0);
+                result(8 downto 1) <= ain(7 downto 0);
                 result(0) <= U(0);
             when "1010" | "1011" =>
-                C <= ain(0);
+                result(8) <= ain(0);
                 result(6 downto 0) <= ain(7 downto 1);
                 result(7) <= U(0);
             when "1110" | "1111" =>
-                C <= U(0);
+                result(8) <= U(0);
             when others =>
-                flags <= (others => '0');
+                result <= (others => '0');
         end case;
     end process;
-    wbus <= result when Eu = '1' else (others => 'Z');
-    Z <= '1' when result = "00000000" else '0';
+    wbus <= result(7 downto 0) when Eu = '1' else (others => 'Z');
+    C <= result(8);
+    Z <= '1' when result(7 downto 0) = "00000000" else '0';
     S <= result(7);
 end sap1;

@@ -173,6 +173,7 @@ begin
                             state <= JMP5;
                         when x"D2" =>
                             if C = '0' then
+                                Cp <= '1';
                                 state <=FETCH1;
                             else
                                 nLm<='0';
@@ -181,6 +182,7 @@ begin
                             end if; 
                         when x"D3" =>
                             if C = '1' then
+                                Cp <= '1';
                                 state <=FETCH1;
                             else
                                 nLm<='0';
@@ -189,6 +191,7 @@ begin
                             end if; 
                         when x"D6" =>
                             if Z = '0' then
+                                Cp <= '1';
                                 state <=FETCH1;
                             else
                                 nLm<='0';
@@ -197,6 +200,7 @@ begin
                             end if;
                          when x"D7" =>
                             if Z = '1' then
+                                Cp <= '1';
                                 state <=FETCH1;
                             else
                                 nLm<='0';
@@ -262,9 +266,11 @@ begin
                 when ADD5 =>
                     U<="0000";
                     Eu <= '1';
+                    nLa <= '0';
                     state <= FETCH1;
                 when SUB5 =>
                     U<="0001";
+                    nLa <= '0';
                     Eu <= '1';
                     state <= FETCH1;
                 when JMP5 | JZ5 | JNZ5 | JC5 | JNC5=>
@@ -287,6 +293,7 @@ begin
                     end if;
                     nLa <= '0';
                     Eu <= '1';
+                    Lf <= '1';
                     state <= FETCH1;
                 when DEC5 =>
                     U <= "0111";
