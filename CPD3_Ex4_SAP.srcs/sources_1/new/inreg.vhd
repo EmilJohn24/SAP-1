@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 06.04.2021 09:35:51
+-- Create Date: 15.04.2021 08:11:16
 -- Design Name: 
--- Module Name: flagReg - Behavioral
+-- Module Name: inreg - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,29 +31,22 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity flagReg is
-    Port ( Lf : in STD_LOGIC; --load flags from ALU
-           clk : in STD_LOGIC; --clock
-           aluFlagIn : in STD_LOGIC_VECTOR (3 downto 0);
-           ctrlFlagOut : out STD_LOGIC_VECTOR (3 downto 0));
-end flagReg;
+entity inreg is
+--  Port ( );
+    Port ( data : in STD_LOGIC_VECTOR(7 downto 0); 
+           clk : in STD_LOGIC;
+           Eip : in STD_LOGIC;
+           wbus : out STD_LOGIC_VECTOR(7 downto 0));
+end inreg;
 
-architecture Behavioral of flagReg is
-    signal flag_reg : STD_LOGIC_VECTOR(3 downto 0) := (3 => '1', others => '0');
-    alias C : STD_LOGIC is flag_reg(0);
-    alias Z : STD_LOGIC is flag_reg(1);
-    alias S : STD_LOGIC is flag_reg(2);
-    alias I : STD_LOGIC is flag_reg(3);
+architecture Behavioral of inreg is
+    signal input_reg : STD_LOGIC_VECTOR(7 downto 0);
 begin
-   flag_proc : process (clk)
-   begin
+    input_proc : process (clk) is
+    begin
         if rising_edge(clk) then
-            if Lf = '1' then
-                flag_reg <= aluFlagIn;
-            end if;
+            input_reg <= data;
         end if;
-   end process;
-   
-   ctrlFlagOut <= flag_reg;
-
+    end process;
+    wbus <= input_reg when Eip = '1' else (others => 'Z');
 end Behavioral;

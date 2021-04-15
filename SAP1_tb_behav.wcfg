@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="14058284fs"></ZoomStartTime>
-      <ZoomEndTime time="21163285fs"></ZoomEndTime>
-      <Cursor1Time time="15242450fs"></Cursor1Time>
+      <ZoomStartTime time="956666fs"></ZoomStartTime>
+      <ZoomEndTime time="1104867fs"></ZoomEndTime>
+      <Cursor1Time time="1000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="125"></NameColumnWidth>
+      <NameColumnWidth column_width="120"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="23" />
+   <WVObjectSize size="27" />
    <wvobject fp_name="/SAP1_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -34,6 +34,11 @@
    <wvobject fp_name="/SAP1_tb/dispout" type="array">
       <obj_property name="ElementShortName">dispout[7:0]</obj_property>
       <obj_property name="ObjectShortName">dispout[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/input" type="array">
+      <obj_property name="ElementShortName">input[7:0]</obj_property>
+      <obj_property name="ObjectShortName">input[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/SAP1_tb/stop_the_clock" type="other">
       <obj_property name="ElementShortName">stop_the_clock</obj_property>
@@ -115,6 +120,18 @@
    <wvobject fp_name="/SAP1_tb/uut/ALU_Module/flags" type="array">
       <obj_property name="ElementShortName">flags[3:0]</obj_property>
       <obj_property name="ObjectShortName">flags[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/CREG_Module/c_reg" type="array">
+      <obj_property name="ElementShortName">c_reg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">c_reg[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/IN_REG/input_reg" type="array">
+      <obj_property name="ElementShortName">input_reg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">input_reg[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/wbus" type="array">
+      <obj_property name="ElementShortName">wbus[7:0]</obj_property>
+      <obj_property name="ObjectShortName">wbus[7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/SAP1_tb/uut/CREG_Module/c_reg" type="array">
       <obj_property name="ElementShortName">c_reg[7:0]</obj_property>

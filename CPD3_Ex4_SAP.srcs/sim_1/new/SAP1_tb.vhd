@@ -15,6 +15,8 @@ architecture bench of SAP1_tb is
     Port (
           clk : in STD_LOGIC;
           clr : in STD_LOGIC;
+          input : in STD_LOGIC_VECTOR(7 downto 0);
+          interrupt : out STD_LOGIC;
           nhlt : out STD_LOGIC;
           dispout : out STD_LOGIC_VECTOR(7 downto 0)
      );
@@ -23,6 +25,8 @@ architecture bench of SAP1_tb is
   signal clk: STD_LOGIC;
   signal clr: STD_LOGIC;
   signal nhlt: STD_LOGIC;
+  signal input : STD_LOGIC_VECTOR(7 downto 0);
+  signal interrupt : STD_LOGIC;
   signal dispout: STD_LOGIC_VECTOR(7 downto 0) ;
 
   constant clock_period: time := 10 ns;
@@ -32,6 +36,8 @@ begin
 
   uut: SAP1 port map ( clk     => clk,
                        clr     => clr,
+                       input => input,
+                       interrupt => interrupt,
                        nhlt    => nhlt,
                        dispout => dispout );
 
@@ -40,9 +46,14 @@ begin
   
     -- Put initialisation code here
     clr <= '1';
+    input <= x"15";
     wait for clock_period;
     clr <= '0';
-
+--    240 => x"15",
+--241 => "11111001",    
+    
+    wait for clock_period * 5;
+    input <= "11111001";
     -- Put test bench stimulus code here
 
     wait;

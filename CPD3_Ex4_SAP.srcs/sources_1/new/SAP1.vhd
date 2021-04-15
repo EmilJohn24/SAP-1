@@ -35,6 +35,8 @@ entity SAP1 is
   Port (
         clk : in STD_LOGIC;
         clr : in STD_LOGIC;
+        input : in STD_LOGIC_VECTOR(7 downto 0);
+        interrupt : out STD_LOGIC;
         nhlt : out STD_LOGIC;
         dispout : out STD_LOGIC_VECTOR(7 downto 0)
    );
@@ -142,6 +144,14 @@ component flagReg is
            clk : in STD_LOGIC;
            ctrlFlagOut : out STD_LOGIC_VECTOR (3 downto 0));
 end component;
+
+component inreg is
+--  Port ( );
+    Port ( data : in STD_LOGIC_VECTOR(7 downto 0); 
+           clk : in STD_LOGIC;
+           Eip : in STD_LOGIC;
+           wbus : out STD_LOGIC_VECTOR(7 downto 0));
+end component;
     signal wbus : STD_LOGIC_VECTOR(7 downto 0);
     
     --PC
@@ -205,6 +215,12 @@ end component;
     alias nLc : STD_LOGIC is cbus(2);
     alias Eip : STD_LOGIC is cbus(1);
     alias nLo : STD_LOGIC is cbus(0); 
+    
+    
+    alias C : STD_LOGIC is aluFlagOut(0);
+    alias Z : STD_LOGIC is aluFlagOut(1);
+    alias S : STD_LOGIC is aluFlagOut(2);
+    alias I : STD_LOGIC is aluFlagOut(3);
 begin
     nClr <= not clr;
     nClk <= not clk;
@@ -278,6 +294,11 @@ begin
                              addr => memaddr,
                              clk => clk,
                              data => wbus);
+    IN_REG : inreg port map(
+                             data => input,
+                             clk => clk,
+                             Eip => Eip,
+                             wbus => wbus); 
                              
     process (clk) begin
         if rising_edge(clk) then

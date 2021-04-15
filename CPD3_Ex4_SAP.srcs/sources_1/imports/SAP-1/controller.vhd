@@ -220,6 +220,13 @@ begin
                             Eu <= '1';
                             Lf <= '1';
                             state <= RRC5;
+                        when x"EE" =>
+                            --IN
+                            if I = '1' then
+                                Eip <= '1';
+                                nLa <= '0';
+                            end if; 
+                            state <= FETCH1;
                         when others =>
                             state <= FETCH1;
                     end case;

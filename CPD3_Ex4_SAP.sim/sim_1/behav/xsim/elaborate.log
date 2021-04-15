@@ -25,6 +25,7 @@ Compiling architecture sap1 of entity xil_defaultlib.memaddreg [memaddreg_defaul
 Compiling architecture sap1 of entity xil_defaultlib.outreg [outreg_default]
 Compiling architecture sap1 of entity xil_defaultlib.pc [pc_default]
 Compiling architecture sap1 of entity xil_defaultlib.ram256x8 [ram256x8_default]
+Compiling architecture behavioral of entity xil_defaultlib.inreg [inreg_default]
 Compiling architecture behavioral of entity xil_defaultlib.SAP1 [sap1_default]
 Compiling architecture bench of entity xil_defaultlib.sap1_tb
 Built simulation snapshot SAP1_tb_behav

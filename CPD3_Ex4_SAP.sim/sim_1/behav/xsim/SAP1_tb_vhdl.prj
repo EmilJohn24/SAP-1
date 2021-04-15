@@ -8,6 +8,7 @@ vhdl xil_defaultlib  \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/controller.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/new/creg.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/new/flagReg.vhd" \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/inreg.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/ireg.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/mareg.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/outreg.vhd" \

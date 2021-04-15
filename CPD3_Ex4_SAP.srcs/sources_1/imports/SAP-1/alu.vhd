@@ -70,4 +70,5 @@ alu_proc : process (U, ain, bin) is
     C <= result(8);
     Z <= '1' when result(7 downto 0) = "00000000" else '0';
     S <= result(7);
+    I <= 'Z';
 end sap1;
