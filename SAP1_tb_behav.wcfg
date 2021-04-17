@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="15302400fs"></ZoomStartTime>
-      <ZoomEndTime time="15431601fs"></ZoomEndTime>
-      <Cursor1Time time="15399600fs"></Cursor1Time>
+      <ZoomStartTime time="236666fs"></ZoomStartTime>
+      <ZoomEndTime time="1152667fs"></ZoomEndTime>
+      <Cursor1Time time="1000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="110"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="29" />
+   <WVObjectSize size="28" />
    <wvobject fp_name="/SAP1_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -56,11 +56,6 @@
    <wvobject fp_name="/SAP1_tb/uut/CONTROL/state" type="other">
       <obj_property name="ElementShortName">state</obj_property>
       <obj_property name="ObjectShortName">state</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/CONTROL/flags" type="array">
-      <obj_property name="ElementShortName">flags[3:0]</obj_property>
-      <obj_property name="ObjectShortName">flags[3:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[241]" type="array">
       <obj_property name="ElementShortName">[241][7:0]</obj_property>
@@ -115,6 +110,7 @@
    <wvobject fp_name="/SAP1_tb/uut/ALU_Module/flags" type="array">
       <obj_property name="ElementShortName">flags[3:0]</obj_property>
       <obj_property name="ObjectShortName">flags[3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/SAP1_tb/uut/CREG_Module/c_reg" type="array">
       <obj_property name="ElementShortName">c_reg[7:0]</obj_property>
