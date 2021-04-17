@@ -83,9 +83,12 @@ architecture sap1 of controller is
             JNZ5,
             ORIANI5, ORIANI6, ORIANI7,
             RRC5,
-            DEC5);
+            DEC5,
+            HLT);
 
     signal state : STATE_T := FETCH1;
+    signal instructionCount : integer := 0;
+    signal cycleCount : integer := 0;
 begin
     controller_fsm : process(clk, nclr) 
     begin 
@@ -94,6 +97,7 @@ begin
         elsif falling_edge(clk) then
             --begin fsm
             --empty state
+            cycleCount <= cycleCount + 1;
             cbus <= (others => '0');
             nLo <= '1';
             nLc <= '1';
@@ -110,6 +114,7 @@ begin
             
             case state is 
                 when FETCH1 =>
+                    instructionCount <= instructionCount + 1;
                     nLm <= '0';
                     Ep <= '1';
                     state <= FETCH2;
@@ -227,6 +232,8 @@ begin
                                 nLa <= '0';
                             end if; 
                             state <= FETCH1;
+                        when x"FF" =>
+                            state <= HLT;
                         when others =>
                             state <= FETCH1;
                     end case;
@@ -307,6 +314,9 @@ begin
                     nLc <= '0';
                     Eu <= '1';
                     state <= FETCH1;
+                when HLT =>
+                    nHlt <= '0';
+                    state <= HLT;
                 when others =>
                     nHlt <= '0';
                     state <= FETCH1; 
