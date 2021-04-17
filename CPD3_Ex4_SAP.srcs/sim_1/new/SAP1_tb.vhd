@@ -46,7 +46,7 @@ begin
   
     -- Put initialisation code here
     clr <= '1';
-    input <= x"15";
+    input <= x"0F";
     wait for clock_period;
     clr <= '0';
 --    240 => x"15",

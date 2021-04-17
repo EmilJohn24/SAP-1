@@ -10,12 +10,12 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="956666fs"></ZoomStartTime>
-      <ZoomEndTime time="1104867fs"></ZoomEndTime>
+      <ZoomStartTime time="732916fs"></ZoomStartTime>
+      <ZoomEndTime time="1053417fs"></ZoomEndTime>
       <Cursor1Time time="1000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="120"></NameColumnWidth>
+      <NameColumnWidth column_width="115"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="27" />
@@ -61,11 +61,6 @@
       <obj_property name="ElementShortName">flags[3:0]</obj_property>
       <obj_property name="ObjectShortName">flags[3:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[240]" type="array">
-      <obj_property name="ElementShortName">[240][7:0]</obj_property>
-      <obj_property name="ObjectShortName">[240][7:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[241]" type="array">
       <obj_property name="ElementShortName">[241][7:0]</obj_property>
@@ -136,5 +131,10 @@
    <wvobject fp_name="/SAP1_tb/uut/CREG_Module/c_reg" type="array">
       <obj_property name="ElementShortName">c_reg[7:0]</obj_property>
       <obj_property name="ObjectShortName">c_reg[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[240]" type="array">
+      <obj_property name="ElementShortName">[240][7:0]</obj_property>
+      <obj_property name="ObjectShortName">[240][7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>
