@@ -313,6 +313,7 @@ begin
                     U <= "0111";
                     nLc <= '0';
                     Eu <= '1';
+                    Lf <= '1';
                     state <= FETCH1;
                 when HLT =>
                     nHlt <= '0';
