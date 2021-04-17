@@ -10,9 +10,9 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="236666fs"></ZoomStartTime>
-      <ZoomEndTime time="1152667fs"></ZoomEndTime>
-      <Cursor1Time time="1000000fs"></Cursor1Time>
+      <ZoomStartTime time="13549150fs"></ZoomStartTime>
+      <ZoomEndTime time="14636151fs"></ZoomEndTime>
+      <Cursor1Time time="14598150fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="110"></NameColumnWidth>
@@ -31,10 +31,6 @@
       <obj_property name="ElementShortName">nhlt</obj_property>
       <obj_property name="ObjectShortName">nhlt</obj_property>
    </wvobject>
-   <wvobject fp_name="/SAP1_tb/dispout" type="array">
-      <obj_property name="ElementShortName">dispout[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dispout[7:0]</obj_property>
-   </wvobject>
    <wvobject fp_name="/SAP1_tb/input" type="array">
       <obj_property name="ElementShortName">input[7:0]</obj_property>
       <obj_property name="ObjectShortName">input[7:0]</obj_property>
@@ -48,14 +44,14 @@
       <obj_property name="ElementShortName">clock_period</obj_property>
       <obj_property name="ObjectShortName">clock_period</obj_property>
    </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/ACC/acc_reg" type="array">
-      <obj_property name="ElementShortName">acc_reg[7:0]</obj_property>
-      <obj_property name="ObjectShortName">acc_reg[7:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-   </wvobject>
    <wvobject fp_name="/SAP1_tb/uut/CONTROL/state" type="other">
       <obj_property name="ElementShortName">state</obj_property>
       <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[240]" type="array">
+      <obj_property name="ElementShortName">[240][7:0]</obj_property>
+      <obj_property name="ObjectShortName">[240][7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[241]" type="array">
       <obj_property name="ElementShortName">[241][7:0]</obj_property>
@@ -75,6 +71,11 @@
    <wvobject fp_name="/SAP1_tb/uut/PC_Unit/prog_count" type="array">
       <obj_property name="ElementShortName">prog_count[7:0]</obj_property>
       <obj_property name="ObjectShortName">prog_count[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/ACC/acc_reg" type="array">
+      <obj_property name="ElementShortName">acc_reg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">acc_reg[7:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/SAP1_tb/uut/BREG_Module/b_reg" type="array">
@@ -119,6 +120,7 @@
    <wvobject fp_name="/SAP1_tb/uut/IN_REG/input_reg" type="array">
       <obj_property name="ElementShortName">input_reg[7:0]</obj_property>
       <obj_property name="ObjectShortName">input_reg[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/SAP1_tb/uut/wbus" type="array">
       <obj_property name="ElementShortName">wbus[7:0]</obj_property>
@@ -128,11 +130,6 @@
       <obj_property name="ElementShortName">c_reg[7:0]</obj_property>
       <obj_property name="ObjectShortName">c_reg[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[240]" type="array">
-      <obj_property name="ElementShortName">[240][7:0]</obj_property>
-      <obj_property name="ObjectShortName">[240][7:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
    <wvobject fp_name="/SAP1_tb/uut/CONTROL/instructionCount" type="other">
       <obj_property name="ElementShortName">instructionCount</obj_property>
       <obj_property name="ObjectShortName">instructionCount</obj_property>
@@ -140,5 +137,9 @@
    <wvobject fp_name="/SAP1_tb/uut/CONTROL/cycleCount" type="other">
       <obj_property name="ElementShortName">cycleCount</obj_property>
       <obj_property name="ObjectShortName">cycleCount</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/dispout" type="array">
+      <obj_property name="ElementShortName">dispout[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dispout[7:0]</obj_property>
    </wvobject>
 </wave_config>
