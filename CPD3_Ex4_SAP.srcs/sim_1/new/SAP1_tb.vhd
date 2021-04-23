@@ -16,8 +16,9 @@ architecture bench of SAP1_tb is
           clk : in STD_LOGIC;
           clr : in STD_LOGIC;
           input : in STD_LOGIC_VECTOR(7 downto 0);
-          interrupt : out STD_LOGIC;
+          interrupt : in STD_LOGIC;
           nhlt : out STD_LOGIC;
+          ready : out STD_LOGIC;
           dispout : out STD_LOGIC_VECTOR(7 downto 0)
      );
   end component;
@@ -27,6 +28,7 @@ architecture bench of SAP1_tb is
   signal nhlt: STD_LOGIC;
   signal input : STD_LOGIC_VECTOR(7 downto 0);
   signal interrupt : STD_LOGIC;
+  signal ready : STD_LOGIC;
   signal dispout: STD_LOGIC_VECTOR(7 downto 0) ;
 
   constant clock_period: time := 10 ns;
@@ -39,6 +41,7 @@ begin
                        input => input,
                        interrupt => interrupt,
                        nhlt    => nhlt,
+                       ready => ready,
                        dispout => dispout );
 
   stimulus: process
@@ -47,13 +50,21 @@ begin
     -- Put initialisation code here
     clr <= '1';
     input <= x"0F";
+    interrupt <= '1';
     wait for clock_period;
     clr <= '0';
 --    240 => x"15",
 --241 => "11111001",    
-    
-    wait for clock_period * 5;
-    input <= "11111001";
+    loop
+        if ready = '1' then  
+            input <= "11111001";
+            interrupt <= '1';
+            wait for clock_period * 10;
+            interrupt <= '0';
+            exit;
+        end if;
+        wait for clock_period;
+    end loop;
     -- Put test bench stimulus code here
 
     wait;
