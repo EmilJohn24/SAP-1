@@ -86,11 +86,14 @@ architecture sap1 of controller is
             RRC5,
             DEC5,
             HLT);
-
+    
+    type ins_cycle_count is array(7 downto 0) of integer;
     signal state : STATE_T := FETCH1;
     signal ready_sig : STD_LOGIC;
     signal instructionCount : integer := 0;
     signal cycleCount : integer := 0;
+    signal count_trackers : ins_cycle_count := (others => 0);
+    signal singleInsCycleCount : integer := 0;
 begin
     controller_fsm : process(clk, nclr) 
     begin 
@@ -99,6 +102,7 @@ begin
         elsif falling_edge(clk) then
             --begin fsm
             --empty state
+            singleInsCycleCount <= singleInsCycleCount + 1;
             cycleCount <= cycleCount + 1;
             cbus <= (others => '0');
             nLo <= '1';
@@ -116,6 +120,8 @@ begin
             
             case state is 
                 when FETCH1 =>
+                    count_trackers(singleInsCycleCount) <= count_trackers(singleInsCycleCount) + 1;
+                    singleInsCycleCount <= 1;
                     instructionCount <= instructionCount + 1;
                     nLm <= '0';
                     Ep <= '1';

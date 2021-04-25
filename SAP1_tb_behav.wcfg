@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="679501fs"></ZoomEndTime>
-      <Cursor1Time time="641000fs"></Cursor1Time>
+      <ZoomStartTime time="253976930fs"></ZoomStartTime>
+      <ZoomEndTime time="255288931fs"></ZoomEndTime>
+      <Cursor1Time time="254576930fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="105"></NameColumnWidth>
+      <NameColumnWidth column_width="100"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="30" />
+   <WVObjectSize size="31" />
    <wvobject fp_name="/SAP1_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -149,5 +149,10 @@
    <wvobject fp_name="/SAP1_tb/dispout" type="array">
       <obj_property name="ElementShortName">dispout[7:0]</obj_property>
       <obj_property name="ObjectShortName">dispout[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/CONTROL/count_trackers" type="array">
+      <obj_property name="ElementShortName">count_trackers[7:0]</obj_property>
+      <obj_property name="ObjectShortName">count_trackers[7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>
