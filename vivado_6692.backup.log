@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat Apr 10 17:18:17 2021
+# Process ID: 6692
+# Current directory: D:/Downloads/College stuff/Term 8/LBYCPD3/SAP-1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2824 D:\Downloads\College stuff\Term 8\LBYCPD3\SAP-1\CPD3_Ex4_SAP.xpr
+# Log file: D:/Downloads/College stuff/Term 8/LBYCPD3/SAP-1/vivado.log
+# Journal file: D:/Downloads/College stuff/Term 8/LBYCPD3/SAP-1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Downloads/College stuff/Term 8/LBYCPD3/SAP-1/CPD3_Ex4_SAP.xpr}
+IINFO: [Project 1-313] Project file moved from 'C:/Users/Emil John Lopez/CPD3_Ex5_SAP' since last save.WWARNING: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'D:/Downloads/College stuff/Term 8/LBYCPD3/SAP-1/CPD3_Ex4_SAP.gen/sources_1', nor could it be found using path 'C:/Users/Emil John Lopez/CPD3_Ex5_SAP/CPD3_Ex4_SAP.gen/sources_1'.SScanning sources...FFinished scanning sourcesINFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+oopen_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:09 . Memory (MB): peak = 1020.129 ; gain = 0.000updateERROR: [Vivado 12-106] *** Exceptiexit
+INFO: [Common 17-206] Exiting Vivado at Sat Apr 10 17:57:16 2021...
+/LBYCPD3/SAP-1/vivado_pid2376.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting Vivado at Sat Apr 10 17:18:48 2021...

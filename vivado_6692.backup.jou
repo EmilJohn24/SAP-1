@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat Apr 10 17:18:17 2021
+# Process ID: 6692
+# Current directory: D:/Downloads/College stuff/Term 8/LBYCPD3/SAP-1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2824 D:\Downloads\College stuff\Term 8\LBYCPD3\SAP-1\CPD3_Ex4_SAP.xpr
+# Log file: D:/Downloads/College stuff/Term 8/LBYCPD3/SAP-1/vivado.log
+# Journal file: D:/Downloads/College stuff/Term 8/LBYCPD3/SAP-1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Downloads/College stuff/Term 8/LBYCPD3/SAP-1/CPD3_Ex4_SAP.xpr}
+update_compile_order -fileset sources_1

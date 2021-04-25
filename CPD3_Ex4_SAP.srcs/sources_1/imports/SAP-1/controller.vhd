@@ -16,6 +16,7 @@ entity controller is
            inst : in STD_LOGIC_VECTOR (7 downto 0); -- connected to ireg
            flags : in STD_LOGIC_VECTOR (3 downto 0); --connected to flag register
            cbus : out STD_LOGIC_VECTOR (23 downto 0); -- control bus output
+           ready : out STD_LOGIC;
            nhlt : out STD_LOGIC); -- CPU halt signal
 end controller;
 
@@ -85,10 +86,14 @@ architecture sap1 of controller is
             RRC5,
             DEC5,
             HLT);
-
+    
+    type ins_cycle_count is array(7 downto 0) of integer;
     signal state : STATE_T := FETCH1;
+    signal ready_sig : STD_LOGIC;
     signal instructionCount : integer := 0;
     signal cycleCount : integer := 0;
+    signal count_trackers : ins_cycle_count := (others => 0);
+    signal singleInsCycleCount : integer := 0;
 begin
     controller_fsm : process(clk, nclr) 
     begin 
@@ -97,6 +102,7 @@ begin
         elsif falling_edge(clk) then
             --begin fsm
             --empty state
+            singleInsCycleCount <= singleInsCycleCount + 1;
             cycleCount <= cycleCount + 1;
             cbus <= (others => '0');
             nLo <= '1';
@@ -114,9 +120,12 @@ begin
             
             case state is 
                 when FETCH1 =>
+                    count_trackers(singleInsCycleCount) <= count_trackers(singleInsCycleCount) + 1;
+                    singleInsCycleCount <= 1;
                     instructionCount <= instructionCount + 1;
                     nLm <= '0';
                     Ep <= '1';
+                    ready_sig <= '0';
                     state <= FETCH2;
                 when FETCH2 =>
                     Cp <= '1';
@@ -230,6 +239,7 @@ begin
                             if I = '1' then
                                 Eip <= '1';
                                 nLa <= '0';
+                                ready_sig <= '1';
                             end if; 
                             state <= FETCH1;
                         when x"FF" =>
@@ -324,6 +334,7 @@ begin
             end case;
         end if;
     end process;
+    ready <= ready_sig;
 --    ringctr : ctrl_ringctr port map (nclk => clk, nclr => nclr, state => state);
 --    decoder : ctrl_decoder port map (inst => inst(7 downto 4), op_decode => op_decode);
 --    matrix : ctrl_matrix port map (state => state, op_decode => op_decode, cbus => cbus, nhlt => nhlt);

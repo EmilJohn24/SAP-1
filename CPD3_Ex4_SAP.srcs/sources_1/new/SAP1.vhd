@@ -36,8 +36,9 @@ entity SAP1 is
         clk : in STD_LOGIC;
         clr : in STD_LOGIC;
         input : in STD_LOGIC_VECTOR(7 downto 0);
-        interrupt : out STD_LOGIC;
+        interrupt : in STD_LOGIC;
         nhlt : out STD_LOGIC;
+        ready : out STD_LOGIC;
         dispout : out STD_LOGIC_VECTOR(7 downto 0)
    );
 end SAP1;
@@ -50,6 +51,7 @@ component controller is
            inst : in STD_LOGIC_VECTOR (7 downto 0); -- connected to ireg
            flags : in STD_LOGIC_VECTOR (3 downto 0); --connected to flags
            cbus : out STD_LOGIC_VECTOR (23 downto 0); -- control bus output
+           ready : out STD_LOGIC; --input ready signal
            nhlt : out STD_LOGIC); -- CPU halt signal
 end component;
 
@@ -220,7 +222,8 @@ end component;
     alias C : STD_LOGIC is aluFlagOut(0);
     alias Z : STD_LOGIC is aluFlagOut(1);
     alias S : STD_LOGIC is aluFlagOut(2);
-    alias I : STD_LOGIC is aluFlagOut(3);
+    alias I : STD_LOGIC is ctrlFlagIn(3);
+    
 begin
     nClr <= not clr;
     nClk <= not clk;
@@ -230,6 +233,7 @@ begin
                              inst => inst,
                              flags => ctrlFlagIn,
                              cbus => cbus,
+                             ready => ready,
                              nhlt => nhlt);
      ACC : accreg port map(
                              clk => clk,
@@ -300,6 +304,7 @@ begin
                              Eip => Eip,
                              wbus => wbus); 
                              
+    I <= interrupt;
     process (clk) begin
         if rising_edge(clk) then
         
