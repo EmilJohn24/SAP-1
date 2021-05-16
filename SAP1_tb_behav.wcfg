@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="253976930fs"></ZoomStartTime>
-      <ZoomEndTime time="255288931fs"></ZoomEndTime>
-      <Cursor1Time time="254576930fs"></Cursor1Time>
+      <ZoomStartTime time="1555000fs"></ZoomStartTime>
+      <ZoomEndTime time="1627201fs"></ZoomEndTime>
+      <Cursor1Time time="160000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="100"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <NameColumnWidth column_width="143"></NameColumnWidth>
+      <ValueColumnWidth column_width="73"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="31" />
+   <WVObjectSize size="27" />
    <wvobject fp_name="/SAP1_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -31,128 +31,124 @@
       <obj_property name="ElementShortName">nhlt</obj_property>
       <obj_property name="ObjectShortName">nhlt</obj_property>
    </wvobject>
-   <wvobject fp_name="/SAP1_tb/interrupt" type="logic">
-      <obj_property name="ElementShortName">interrupt</obj_property>
-      <obj_property name="ObjectShortName">interrupt</obj_property>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM" type="array">
+      <obj_property name="ElementShortName">RAM[0:255][7:0]</obj_property>
+      <obj_property name="ObjectShortName">RAM[0:255][7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/SAP1_tb/ready" type="logic">
-      <obj_property name="ElementShortName">ready</obj_property>
-      <obj_property name="ObjectShortName">ready</obj_property>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[50]" type="array">
+      <obj_property name="ElementShortName">[50][7:0]</obj_property>
+      <obj_property name="ObjectShortName">[50][7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/SAP1_tb/input" type="array">
-      <obj_property name="ElementShortName">input[7:0]</obj_property>
-      <obj_property name="ObjectShortName">input[7:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[51]" type="array">
+      <obj_property name="ElementShortName">[51][7:0]</obj_property>
+      <obj_property name="ObjectShortName">[51][7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[52]" type="array">
+      <obj_property name="ElementShortName">[52][7:0]</obj_property>
+      <obj_property name="ObjectShortName">[52][7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[53]" type="array">
+      <obj_property name="ElementShortName">[53][7:0]</obj_property>
+      <obj_property name="ObjectShortName">[53][7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[54]" type="array">
+      <obj_property name="ElementShortName">[54][7:0]</obj_property>
+      <obj_property name="ObjectShortName">[54][7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[55]" type="array">
+      <obj_property name="ElementShortName">[55][7:0]</obj_property>
+      <obj_property name="ObjectShortName">[55][7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[56]" type="array">
+      <obj_property name="ElementShortName">[56][7:0]</obj_property>
+      <obj_property name="ObjectShortName">[56][7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[57]" type="array">
+      <obj_property name="ElementShortName">[57][7:0]</obj_property>
+      <obj_property name="ObjectShortName">[57][7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[58]" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">[58][7:0]</obj_property>
+      <obj_property name="ObjectShortName">[58][7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="label">[58](final)[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">dataOut[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dataOut[7:0]</obj_property>
+      <obj_property name="label">ramOut[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/SAP1_tb/uut/ACC/acc_reg" type="array">
       <obj_property name="ElementShortName">acc_reg[7:0]</obj_property>
       <obj_property name="ObjectShortName">acc_reg[7:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/SAP1_tb/stop_the_clock" type="other">
-      <obj_property name="ElementShortName">stop_the_clock</obj_property>
-      <obj_property name="ObjectShortName">stop_the_clock</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SAP1_tb/clock_period" type="other">
-      <obj_property name="ElementShortName">clock_period</obj_property>
-      <obj_property name="ObjectShortName">clock_period</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/CONTROL/state" type="other">
-      <obj_property name="ElementShortName">state</obj_property>
-      <obj_property name="ObjectShortName">state</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[240]" type="array">
-      <obj_property name="ElementShortName">[240][7:0]</obj_property>
-      <obj_property name="ObjectShortName">[240][7:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[241]" type="array">
-      <obj_property name="ElementShortName">[241][7:0]</obj_property>
-      <obj_property name="ObjectShortName">[241][7:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[242]" type="array">
-      <obj_property name="ElementShortName">[242][7:0]</obj_property>
-      <obj_property name="ObjectShortName">[242][7:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[243]" type="array">
-      <obj_property name="ElementShortName">[243][7:0]</obj_property>
-      <obj_property name="ObjectShortName">[243][7:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
+   <wvobject fp_name="/SAP1_tb/uut/BREG_Module/b_reg" type="array">
+      <obj_property name="ElementShortName">b_reg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">b_reg[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/SAP1_tb/uut/PC_Unit/prog_count" type="array">
       <obj_property name="ElementShortName">prog_count[7:0]</obj_property>
       <obj_property name="ObjectShortName">prog_count[7:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/IN_REG/input_reg" type="array">
-      <obj_property name="ElementShortName">input_reg[7:0]</obj_property>
-      <obj_property name="ObjectShortName">input_reg[7:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/SAP1_tb/uut/wbus" type="array">
+      <obj_property name="ElementShortName">wbus[7:0]</obj_property>
+      <obj_property name="ObjectShortName">wbus[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/BREG_Module/b_reg" type="array">
-      <obj_property name="ElementShortName">b_reg[7:0]</obj_property>
-      <obj_property name="ObjectShortName">b_reg[7:0]</obj_property>
+   <wvobject fp_name="/SAP1_tb/uut/MAR/memaddr" type="array">
+      <obj_property name="ElementShortName">memaddr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">memaddr[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/TMPTEG_Module/tmp_reg" type="array">
-      <obj_property name="ElementShortName">tmp_reg[7:0]</obj_property>
-      <obj_property name="ObjectShortName">tmp_reg[7:0]</obj_property>
+   <wvobject fp_name="/SAP1_tb/uut/ALU_Module/ain" type="array">
+      <obj_property name="ElementShortName">ain[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ain[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/BREG_Module/nLb" type="logic">
-      <obj_property name="ElementShortName">nLb</obj_property>
-      <obj_property name="ObjectShortName">nLb</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/CREG_Module/c_reg" type="array">
-      <obj_property name="ElementShortName">c_reg[7:0]</obj_property>
-      <obj_property name="ObjectShortName">c_reg[7:0]</obj_property>
+   <wvobject fp_name="/SAP1_tb/uut/ALU_Module/bin" type="array">
+      <obj_property name="ElementShortName">bin[7:0]</obj_property>
+      <obj_property name="ObjectShortName">bin[7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/SAP1_tb/uut/ALU_Module/result" type="array">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">result[8:0]</obj_property>
       <obj_property name="ObjectShortName">result[8:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/FLAGREG_Module/Lf" type="logic">
-      <obj_property name="ElementShortName">Lf</obj_property>
-      <obj_property name="ObjectShortName">Lf</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/ALU_Module/U" type="array">
-      <obj_property name="ElementShortName">U[3:0]</obj_property>
-      <obj_property name="ObjectShortName">U[3:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="label">aluResult[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/SAP1_tb/uut/ALU_Module/flags" type="array">
       <obj_property name="ElementShortName">flags[3:0]</obj_property>
       <obj_property name="ObjectShortName">flags[3:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/CREG_Module/c_reg" type="array">
-      <obj_property name="ElementShortName">c_reg[7:0]</obj_property>
-      <obj_property name="ObjectShortName">c_reg[7:0]</obj_property>
+   <wvobject fp_name="/SAP1_tb/uut/IREG_Module/i_reg" type="array">
+      <obj_property name="ElementShortName">i_reg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_reg[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/wbus" type="array">
-      <obj_property name="ElementShortName">wbus[7:0]</obj_property>
-      <obj_property name="ObjectShortName">wbus[7:0]</obj_property>
+   <wvobject fp_name="/SAP1_tb/uut/CONTROL/cbus" type="array">
+      <obj_property name="ElementShortName">cbus[23:0]</obj_property>
+      <obj_property name="ObjectShortName">cbus[23:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/CREG_Module/c_reg" type="array">
-      <obj_property name="ElementShortName">c_reg[7:0]</obj_property>
-      <obj_property name="ObjectShortName">c_reg[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/CONTROL/instructionCount" type="other">
-      <obj_property name="ElementShortName">instructionCount</obj_property>
-      <obj_property name="ObjectShortName">instructionCount</obj_property>
+   <wvobject fp_name="/SAP1_tb/uut/CONTROL/state" type="other">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
    </wvobject>
    <wvobject fp_name="/SAP1_tb/uut/CONTROL/cycleCount" type="other">
       <obj_property name="ElementShortName">cycleCount</obj_property>
       <obj_property name="ObjectShortName">cycleCount</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SAP1_tb/dispout" type="array">
-      <obj_property name="ElementShortName">dispout[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dispout[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SAP1_tb/uut/CONTROL/count_trackers" type="array">
-      <obj_property name="ElementShortName">count_trackers[7:0]</obj_property>
-      <obj_property name="ObjectShortName">count_trackers[7:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="DES_unit_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="DES_unit_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="829333fs"></ZoomStartTime>
+      <ZoomEndTime time="1034134fs"></ZoomEndTime>
+      <Cursor1Time time="893733fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="139"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wvobject fp_name="/DES_unit_tb/text_in" type="array">
+      <obj_property name="ElementShortName">text_in[63:0]</obj_property>
+      <obj_property name="ObjectShortName">text_in[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/key" type="array">
+      <obj_property name="ElementShortName">key[63:0]</obj_property>
+      <obj_property name="ObjectShortName">key[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/mode" type="logic">
+      <obj_property name="ElementShortName">mode</obj_property>
+      <obj_property name="ObjectShortName">mode</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/text_out" type="array">
+      <obj_property name="ElementShortName">text_out[63:0]</obj_property>
+      <obj_property name="ObjectShortName">text_out[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/stop_the_clock" type="other">
+      <obj_property name="ElementShortName">stop_the_clock</obj_property>
+      <obj_property name="ObjectShortName">stop_the_clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/clock_period" type="other">
+      <obj_property name="ElementShortName">clock_period</obj_property>
+      <obj_property name="ObjectShortName">clock_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/uut/DATAPATH/EXP/exp" type="array">
+      <obj_property name="ElementShortName">exp[47:0]</obj_property>
+      <obj_property name="ObjectShortName">exp[47:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/uut/DATAPATH/xor_48_out" type="array">
+      <obj_property name="ElementShortName">xor_48_out[47:0]</obj_property>
+      <obj_property name="ObjectShortName">xor_48_out[47:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/uut/DATAPATH/sbox_out" type="array">
+      <obj_property name="ElementShortName">sbox_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sbox_out[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/uut/DATAPATH/init_perm_out" type="array">
+      <obj_property name="ElementShortName">init_perm_out[63:0]</obj_property>
+      <obj_property name="ObjectShortName">init_perm_out[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/uut/CONTROL/round_reg" type="array">
+      <obj_property name="ElementShortName">round_reg[3:0]</obj_property>
+      <obj_property name="ObjectShortName">round_reg[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/uut/DATAPATH/curr_key" type="array">
+      <obj_property name="ElementShortName">curr_key[47:0]</obj_property>
+      <obj_property name="ObjectShortName">curr_key[47:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/uut/DATAPATH/xor_32_out" type="array">
+      <obj_property name="ElementShortName">xor_32_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">xor_32_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/uut/DATAPATH/text_out" type="array">
+      <obj_property name="ElementShortName">text_out[63:0]</obj_property>
+      <obj_property name="ObjectShortName">text_out[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/uut/DATAPATH/swap_out" type="array">
+      <obj_property name="ElementShortName">swap_out[63:0]</obj_property>
+      <obj_property name="ObjectShortName">swap_out[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/uut/CONTROL/state" type="other">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/uut/DATAPATH/lreg_out" type="array">
+      <obj_property name="ElementShortName">lreg_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">lreg_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DES_unit_tb/uut/DATAPATH/rreg_out" type="array">
+      <obj_property name="ElementShortName">rreg_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rreg_out[31:0]</obj_property>
+   </wvobject>
+</wave_config>

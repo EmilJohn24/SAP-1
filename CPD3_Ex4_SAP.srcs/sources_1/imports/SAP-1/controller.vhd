@@ -145,7 +145,7 @@ begin
                             nLm <= '0';
                             Ep <= '1';
                             state <= STA5;
-                        when x"22" =>
+                        when x"20" =>
                             nLm <='0';
                             Ep <= '1';
                             state <= MVI5;
@@ -284,7 +284,7 @@ begin
                     Cp <= '1';
                     state <= MVI6;
                 when MVI6 =>
-                    nLc <= '0';
+                    nLa <= '0';
                     nCE <= '0';
                     state<= FETCH1;
                 when ADD5 =>

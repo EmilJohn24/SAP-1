@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Apr 23 12:49:21 2021
+# Process ID: 9660
+# Current directory: C:/Users/Emil John Lopez/CPD3_Ex5_SAP
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15844 C:\Users\Emil John Lopez\CPD3_Ex5_SAP\CPD3_Ex4_SAP.xpr
+# Log file: C:/Users/Emil John Lopez/CPD3_Ex5_SAP/vivado.log
+# Journal file: C:/Users/Emil John Lopez/CPD3_Ex5_SAP\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Emil John Lopez/CPD3_Ex5_SAP/CPD3_Ex4_SAP.xpr}
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config {C:/Users/Emil John Lopez/CPD3_Ex5_SAP/SAP1_tb_behav.wcfg}
+source SAP1_tb.tcl
+relaunch_sim
+run 1000 ns
+run 10000 ns
+current_wave_config {SAP1_tb_behav.wcfg}
+add_wave {{/SAP1_tb/interrupt}} {{/SAP1_tb/ready}} 
+relaunch_sim
+relaunch_sim
+run 10000 ns
+run 10000 ns
+run 10000 ns
+run 10000 ns
+run 10000000 ns
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+save_wave_config {C:/Users/Emil John Lopez/CPD3_Ex5_SAP/SAP1_tb_behav.wcfg}
+close_sim

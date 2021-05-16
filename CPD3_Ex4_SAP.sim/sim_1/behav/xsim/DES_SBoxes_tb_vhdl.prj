@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/DES_SBoxes.vhd" \
+"../../../../CPD3_Ex4_SAP.srcs/sim_1/new/DES_SBoxes_tb.vhd" \
+
+# Do not sort compile order
+nosort
