@@ -1,28 +1,7 @@
 Vivado Simulator 2020.2
 Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
-Running: D:/Programs/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 289434e2e2ac403fae3bc18eb19e3e33 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot DES_unit_tb_behav xil_defaultlib.DES_unit_tb -log elaborate.log 
+Running: D:/Programs/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 289434e2e2ac403fae3bc18eb19e3e33 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot ram256x64_tb_behav xil_defaultlib.ram256x64_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling package std.standard
-Compiling package std.textio
-Compiling package ieee.std_logic_1164
-Compiling package ieee.numeric_std
-Compiling architecture behavioral of entity xil_defaultlib.DES_InitialPermutation [des_initialpermutation_default]
-Compiling architecture behavioral of entity xil_defaultlib.DES_Mux31b_2to1 [des_mux31b_2to1_default]
-Compiling architecture behavioral of entity xil_defaultlib.DES_Reg32 [des_reg32_default]
-Compiling architecture behavioral of entity xil_defaultlib.DES_Expansion [des_expansion_default]
-Compiling architecture behavioral of entity xil_defaultlib.DES_keygen [des_keygen_default]
-Compiling architecture behavioral of entity xil_defaultlib.DES_SBoxes [des_sboxes_default]
-Compiling architecture behavioral of entity xil_defaultlib.DES_Permutation [des_permutation_default]
-Compiling architecture behavioral of entity xil_defaultlib.DES_DataSwapping [des_dataswapping_default]
-Compiling architecture behavioral of entity xil_defaultlib.DES_InversePermutation [des_inversepermutation_default]
-Compiling architecture behavioral of entity xil_defaultlib.DES_OutReg [des_outreg_default]
-Compiling architecture behavioral of entity xil_defaultlib.DES_datapath [des_datapath_default]
-Compiling architecture behavioral of entity xil_defaultlib.DES_controller [des_controller_default]
-Compiling architecture behavioral of entity xil_defaultlib.DES_unit [des_unit_default]
-Compiling architecture bench of entity xil_defaultlib.des_unit_tb
-Built simulation snapshot DES_unit_tb_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
