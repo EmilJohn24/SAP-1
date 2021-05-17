@@ -1,5 +1,19 @@
 # compile vhdl design source files
 vhdl xil_defaultlib  \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/DES_DataSwapping.vhd" \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/DES_Expansion.vhd" \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/DES_InitialPermutation.vhd" \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/DES_InversePermutation.vhd" \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/DES_Mux.vhd" \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/DES_OutReg.vhd" \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/DES_Permutation.vhd" \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/DES_Reg32.vhd" \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/DES_SBoxes.vhd" \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/DES_controller.vhd" \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/DES_datapath.vhd" \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/DES_keygen.vhd" \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/DES_unit.vhd" \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/RAM256x64.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/new/SAP1.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/new/TmpReg.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/accreg.vhd" \
@@ -10,10 +24,11 @@ vhdl xil_defaultlib  \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/new/flagReg.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/new/inreg.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/ireg.vhd" \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/keyreg.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/mareg.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/outreg.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/pc.vhd" \
-"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/ram256x8.vhd" \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/textReg.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sim_1/new/SAP1_tb.vhd" \
 
 # Do not sort compile order

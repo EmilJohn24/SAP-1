@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="SAP1_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="SAP1_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="233080fs"></ZoomStartTime>
+      <ZoomEndTime time="362281fs"></ZoomEndTime>
+      <Cursor1Time time="1000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="210"></NameColumnWidth>
+      <ValueColumnWidth column_width="101"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="43" />
+   <wvobject fp_name="/SAP1_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/clr" type="logic">
+      <obj_property name="ElementShortName">clr</obj_property>
+      <obj_property name="ObjectShortName">clr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/nhlt" type="logic">
+      <obj_property name="ElementShortName">nhlt</obj_property>
+      <obj_property name="ObjectShortName">nhlt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/input" type="array">
+      <obj_property name="ElementShortName">input[7:0]</obj_property>
+      <obj_property name="ObjectShortName">input[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/interrupt" type="logic">
+      <obj_property name="ElementShortName">interrupt</obj_property>
+      <obj_property name="ObjectShortName">interrupt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/dispout" type="array">
+      <obj_property name="ElementShortName">dispout[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dispout[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/stop_the_clock" type="other">
+      <obj_property name="ElementShortName">stop_the_clock</obj_property>
+      <obj_property name="ObjectShortName">stop_the_clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/clock_period" type="other">
+      <obj_property name="ElementShortName">clock_period</obj_property>
+      <obj_property name="ObjectShortName">clock_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/PC_Unit/prog_count" type="array">
+      <obj_property name="ElementShortName">prog_count[7:0]</obj_property>
+      <obj_property name="ObjectShortName">prog_count[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/data" type="array">
+      <obj_property name="ElementShortName">data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">data[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/nCE" type="logic">
+      <obj_property name="ElementShortName">nCE</obj_property>
+      <obj_property name="ObjectShortName">nCE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/nWE_byte" type="logic">
+      <obj_property name="ElementShortName">nWE_byte</obj_property>
+      <obj_property name="ObjectShortName">nWE_byte</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/nWE_word" type="logic">
+      <obj_property name="ElementShortName">nWE_word</obj_property>
+      <obj_property name="ObjectShortName">nWE_word</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/RD_byte" type="logic">
+      <obj_property name="ElementShortName">RD_byte</obj_property>
+      <obj_property name="ObjectShortName">RD_byte</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/CONTROL/state" type="other">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/addr" type="array">
+      <obj_property name="ElementShortName">addr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/IREG_Module/inst" type="array">
+      <obj_property name="ElementShortName">inst[7:0]</obj_property>
+      <obj_property name="ObjectShortName">inst[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/CONTROL/cbus" type="array">
+      <obj_property name="ElementShortName">cbus[30:0]</obj_property>
+      <obj_property name="ObjectShortName">cbus[30:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/dataOut" type="array">
+      <obj_property name="ElementShortName">dataOut[63:0]</obj_property>
+      <obj_property name="ObjectShortName">dataOut[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/word" type="array">
+      <obj_property name="ElementShortName">word[63:0]</obj_property>
+      <obj_property name="ObjectShortName">word[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/readMode" type="logic">
+      <obj_property name="ElementShortName">readMode</obj_property>
+      <obj_property name="ObjectShortName">readMode</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM" type="array">
+      <obj_property name="ElementShortName">RAM[0:255][7:0]</obj_property>
+      <obj_property name="ObjectShortName">RAM[0:255][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/MAR/mar_reg" type="array">
+      <obj_property name="ElementShortName">mar_reg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mar_reg[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/wbus" type="array">
+      <obj_property name="ElementShortName">wbus[63:0]</obj_property>
+      <obj_property name="ObjectShortName">wbus[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/MAR/memaddr" type="array">
+      <obj_property name="ElementShortName">memaddr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">memaddr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/CONTROL/cbus[24]" type="logic">
+      <obj_property name="ElementShortName">[24]</obj_property>
+      <obj_property name="ObjectShortName">[24]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/KEY_REG/keyIn" type="array">
+      <obj_property name="ElementShortName">keyIn[63:0]</obj_property>
+      <obj_property name="ObjectShortName">keyIn[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/KEY_REG/nLk" type="logic">
+      <obj_property name="ElementShortName">nLk</obj_property>
+      <obj_property name="ObjectShortName">nLk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/KEY_REG/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/KEY_REG/keyOut" type="array">
+      <obj_property name="ElementShortName">keyOut[63:0]</obj_property>
+      <obj_property name="ObjectShortName">keyOut[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/KEY_REG/key_reg" type="array">
+      <obj_property name="ElementShortName">key_reg[63:0]</obj_property>
+      <obj_property name="ObjectShortName">key_reg[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/ACC/acc_reg" type="array">
+      <obj_property name="ElementShortName">acc_reg[63:0]</obj_property>
+      <obj_property name="ObjectShortName">acc_reg[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/TXT_REG/textOut" type="array">
+      <obj_property name="ElementShortName">textOut[63:0]</obj_property>
+      <obj_property name="ObjectShortName">textOut[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/TXT_REG/text_reg" type="array">
+      <obj_property name="ElementShortName">text_reg[63:0]</obj_property>
+      <obj_property name="ObjectShortName">text_reg[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/DES/text_out" type="array">
+      <obj_property name="ElementShortName">text_out[63:0]</obj_property>
+      <obj_property name="ObjectShortName">text_out[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/DES/DATAPATH/OUT_REG/des_outreg" type="array">
+      <obj_property name="ElementShortName">des_outreg[63:0]</obj_property>
+      <obj_property name="ObjectShortName">des_outreg[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/DES/CONTROL/en_des" type="logic">
+      <obj_property name="ElementShortName">en_des</obj_property>
+      <obj_property name="ObjectShortName">en_des</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/DES/mode" type="logic">
+      <obj_property name="ElementShortName">mode</obj_property>
+      <obj_property name="ObjectShortName">mode</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/DES/CONTROL/state" type="other">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/DES/CONTROL/round" type="array">
+      <obj_property name="ElementShortName">round[3:0]</obj_property>
+      <obj_property name="ObjectShortName">round[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/DES/CONTROL/encrypt_sig" type="logic">
+      <obj_property name="ElementShortName">encrypt_sig</obj_property>
+      <obj_property name="ObjectShortName">encrypt_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/DES/CONTROL/decrypt_sig" type="logic">
+      <obj_property name="ElementShortName">decrypt_sig</obj_property>
+      <obj_property name="ObjectShortName">decrypt_sig</obj_property>
+   </wvobject>
+</wave_config>

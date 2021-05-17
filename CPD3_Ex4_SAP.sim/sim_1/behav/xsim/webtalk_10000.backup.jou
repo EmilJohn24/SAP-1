@@ -2,11 +2,11 @@
 # Webtalk v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sun May 16 13:48:27 2021
-# Process ID: 14852
+# Start of session at: Mon May 17 14:59:51 2021
+# Process ID: 10000
 # Current directory: D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.sim/sim_1/behav/xsim/xsim.dir/DES_SBoxes_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.sim/sim_1/behav/xsim/xsim.dir/SAP1_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.sim/sim_1/behav/xsim/xsim.dir/DES_SBoxes_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+source D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.sim/sim_1/behav/xsim/xsim.dir/SAP1_tb_behav/webtalk/xsim_webtalk.tcl -notrace

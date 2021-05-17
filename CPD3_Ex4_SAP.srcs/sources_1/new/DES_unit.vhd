@@ -36,7 +36,10 @@ entity DES_unit is
            key : in STD_LOGIC_VECTOR (63 downto 0);
            clk : in STD_LOGIC;
            rst : in STD_LOGIC;
+           en_des : in STD_LOGIC;
+           oe : in STD_LOGIC; --output enable
            mode : in STD_LOGIC;
+           ready : out STD_LOGIC;
            text_out : out STD_LOGIC_VECTOR (63 downto 0));
 end DES_unit;
     
@@ -48,6 +51,7 @@ architecture Behavioral of DES_unit is
            round : in STD_LOGIC_VECTOR(3 downto 0);
            des_ctrl : in STD_LOGIC_VECTOR (8 downto 0);
            text_in : in STD_LOGIC_VECTOR (63 downto 0);
+           oe : in STD_LOGIC; --output enable
            text_out : out STD_LOGIC_VECTOR (63 downto 0));
     end component;
     
@@ -55,6 +59,8 @@ architecture Behavioral of DES_unit is
     Port ( mode : in STD_LOGIC;
            clk : in STD_LOGIC;
            rst : in STD_LOGIC;
+           en_des : in STD_LOGIC;
+           ready : out STD_LOGIC;
            round : out STD_LOGIC_VECTOR(3 downto 0);
            des_ctrl : out STD_LOGIC_VECTOR (8 downto 0));
     end component;
@@ -70,10 +76,13 @@ begin
                                      round => round_sig,
                                      des_ctrl => des_ctrl,
                                      text_in => text_in,
+                                     oe => oe,
                                      text_out => text_out);
     CONTROL : DES_controller port map(mode => mode,
                                       clk => clk,
                                       rst => rst,
+                                      en_des => en_des,
                                       round => round_sig,
+                                      ready => ready,
                                       des_ctrl => des_ctrl);                            
 end Behavioral;    

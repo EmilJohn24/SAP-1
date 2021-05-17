@@ -14,12 +14,12 @@ entity TmpReg is
     Port ( clk : in STD_LOGIC; -- clock
            nLt : in STD_LOGIC; -- load data from W bus
            Et : in STD_LOGIC; -- enable output data to W bus
-           wbus : inout STD_LOGIC_VECTOR (7 downto 0); -- connected to W bus
-           aluout : out STD_LOGIC_VECTOR (7 downto 0)); -- connected to ALU
+           wbus : inout STD_LOGIC_VECTOR (63 downto 0); -- connected to W bus
+           aluout : out STD_LOGIC_VECTOR (63 downto 0)); -- connected to ALU
 end TmpReg;
 
 architecture sap1 of TmpReg is
-    signal tmp_reg : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
+    signal tmp_reg : STD_LOGIC_VECTOR (63 downto 0) := (others => '0');
 begin
 tmpreg_proc : process (clk) is
     begin

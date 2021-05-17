@@ -14,11 +14,11 @@ entity creg is
     Port ( clk : in STD_LOGIC; -- clock
            nLc : in STD_LOGIC; -- load data from W bus
            Ec : in STD_LOGIC; --enable output
-           wbus : inout STD_LOGIC_VECTOR (7 downto 0)); -- connected to W bus
+           wbus : inout STD_LOGIC_VECTOR (63 downto 0)); -- connected to W bus
 end creg;
 
 architecture sap1 of creg is
-    signal c_reg : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
+    signal c_reg : STD_LOGIC_VECTOR (63 downto 0) := (others => '0');
 begin
 creg_proc : process (clk) is
     begin

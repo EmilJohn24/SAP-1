@@ -49,23 +49,25 @@ begin
   
     -- Put initialisation code here
     clr <= '1';
-    input <= x"0F";
-    interrupt <= '1';
     wait for clock_period;
     clr <= '0';
---    240 => x"15",
---241 => "11111001",    
-    loop
-        if ready = '1' then  
-            input <= "11111001";
-            interrupt <= '1';
-            wait for clock_period * 10;
-            interrupt <= '0';
-            exit;
-        end if;
-        wait for clock_period;
-    end loop;
-    -- Put test bench stimulus code here
+--    input <= x"0F";
+--    interrupt <= '1';
+--    wait for clock_period;
+--    clr <= '0';
+----    240 => x"15",
+----241 => "11111001",    
+--    loop
+--        if ready = '1' then  
+--            input <= "11111001";
+--            interrupt <= '1';
+--            wait for clock_period * 10;
+--            interrupt <= '0';
+--            exit;
+--        end if;
+--        wait for clock_period;
+--    end loop;
+--    -- Put test bench stimulus code here
 
     wait;
   end process;

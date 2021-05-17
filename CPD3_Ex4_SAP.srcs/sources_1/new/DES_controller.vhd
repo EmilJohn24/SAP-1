@@ -1,24 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 08.05.2021 11:47:34
--- Design Name: 
--- Module Name: DES_controller - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -35,7 +14,9 @@ entity DES_controller is
     Port ( mode : in STD_LOGIC;
            clk : in STD_LOGIC;
            rst : in STD_LOGIC;
+           en_des : in STD_LOGIC;
            round : out STD_LOGIC_VECTOR(3 downto 0);
+           ready : out STD_LOGIC;
            des_ctrl : out STD_LOGIC_VECTOR (8 downto 0));
 end DES_controller;
 
@@ -55,25 +36,34 @@ architecture Behavioral of DES_controller is
     
     type state_t is (idle, enc, dec, enc_process, dec_process, result);
     signal state : state_t := idle;
+    
 begin
     round <= round_reg;
-    FSM : process(clk, rst) is
+    FSM : process(clk, rst, en_des, mode) is
     begin
+--        if en_des = '1' then
+--            en_reg <= '1';
+--            mode_reg <= mode;     
+--        end if;
         if rst = '1' then
             round_reg <= "0000";
+            ready <= '0';
             state <= idle;
         elsif rising_edge(clk) then 
             des_ctrl <= (others => '0');
             case state is
                 when idle =>
-                    sel_lmux <= '0';
-                    sel_rmux <= '0';
-                    if mode = '1' then --encrypt
-                        round_reg <= "0000";
-                        state <= enc;
-                    elsif mode = '0' then --decrypt
-                        round_reg <= "1111";
-                        state <= dec;
+                    if en_des = '1' then
+                        ready <= '0';
+                        sel_lmux <= '0';
+                        sel_rmux <= '0';
+                        if mode = '1' then --encrypt
+                            round_reg <= "0000";
+                            state <= enc;
+                        elsif mode = '0' then --decrypt
+                            round_reg <= "1111";
+                            state <= dec;
+                        end if;
                     end if;
                     
                 when enc =>
@@ -131,6 +121,8 @@ begin
                     en_swap <= '0';
                     en_invperm <= '0';
                     en_out <= '0';
+                    ready <= '1';
+                   
                 
             end case;
         end if;

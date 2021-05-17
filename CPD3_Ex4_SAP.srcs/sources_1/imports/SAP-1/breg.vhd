@@ -14,11 +14,11 @@ entity breg is
     Port ( clk : in STD_LOGIC; -- clock
            nLb : in STD_LOGIC; -- load data from W bus
            Eb : in STD_LOGIC; --enable output
-           wbus : inout STD_LOGIC_VECTOR (7 downto 0)); -- connected to W bus
+           wbus : inout STD_LOGIC_VECTOR (63 downto 0)); -- connected to W bus
 end breg;
 
 architecture sap1 of breg is
-    signal b_reg : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
+    signal b_reg : STD_LOGIC_VECTOR (63 downto 0) := (others => '0');
 begin
 breg_proc : process (clk) is
     begin

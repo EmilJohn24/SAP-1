@@ -50,7 +50,8 @@ component controller is
            nclr : in STD_LOGIC; -- reset controller
            inst : in STD_LOGIC_VECTOR (7 downto 0); -- connected to ireg
            flags : in STD_LOGIC_VECTOR (3 downto 0); --connected to flags
-           cbus : out STD_LOGIC_VECTOR (23 downto 0); -- control bus output
+           interrupts : in STD_LOGIC_VECTOR (1 downto 0);
+           cbus : out STD_LOGIC_VECTOR (30 downto 0); -- control bus output
            ready : out STD_LOGIC; --input ready signal
            nhlt : out STD_LOGIC); -- CPU halt signal
 end component;
@@ -59,31 +60,31 @@ component accreg is
     Port ( clk : in STD_LOGIC; -- clock
            Ea : in STD_LOGIC; -- enable output
            nLa : in STD_LOGIC; -- load data from W bus
-           wbus : inout STD_LOGIC_VECTOR (7 downto 0) := (others => 'Z'); -- connected to W bus
-           aluout : out STD_LOGIC_VECTOR (7 downto 0)); -- connected to ALU
+           wbus : inout STD_LOGIC_VECTOR (63 downto 0) := (others => 'Z'); -- connected to W bus
+           aluout : out STD_LOGIC_VECTOR (63 downto 0)); -- connected to ALU
 end component;
 
 component alu is
     Port ( Eu : in STD_LOGIC; -- enable output
            U : in STD_LOGIC_VECTOR(3 downto 0); -- operation, add if Su = 0, subtract if Su = 1
-           ain : in STD_LOGIC_VECTOR (7 downto 0); -- connected to accreg
-           bin : in STD_LOGIC_VECTOR (7 downto 0); -- connected to breg
+           ain : in STD_LOGIC_VECTOR (63 downto 0); -- connected to accreg
+           bin : in STD_LOGIC_VECTOR (63 downto 0); -- connected to breg
            flags : out STD_LOGIC_VECTOR(3 downto 0);
-           wbus : out STD_LOGIC_VECTOR (7 downto 0)); -- connected to W bus
+           wbus : out STD_LOGIC_VECTOR (63 downto 0)); -- connected to W bus
 end component;
 
 component breg is
     Port ( clk : in STD_LOGIC; -- clock
            nLb : in STD_LOGIC; -- load data from W bus
            Eb : in STD_LOGIC; --enable output
-           wbus : inout STD_LOGIC_VECTOR (7 downto 0)); -- connected to W bus
+           wbus : inout STD_LOGIC_VECTOR (63 downto 0)); -- connected to W bus
 end component;
 
 component creg is
     Port ( clk : in STD_LOGIC; -- clock
            nLc : in STD_LOGIC; -- load data from W bus
            Ec : in STD_LOGIC; --enable output
-           wbus : inout STD_LOGIC_VECTOR (7 downto 0)); -- connected to W bus
+           wbus : inout STD_LOGIC_VECTOR (63 downto 0)); -- connected to W bus
 end component;
 
 component ireg is
@@ -117,27 +118,36 @@ component pc is
            wbus : inout STD_LOGIC_VECTOR (7 downto 0)); -- connected to W bus
 end component;
 
-component ram16x8 is
-    Port ( nCE : in STD_LOGIC; -- enable memory output
-           nWE : in STD_LOGIC; -- read/write, read if nWE = 1, write if nWE = 0
-           addr : in STD_LOGIC_VECTOR (3 downto 0); -- connected to memaddreg
-           clk : in STD_LOGIC; --clock
-           data : inout STD_LOGIC_VECTOR (7 downto 0)); -- connected to W bus
-end component;
+--component ram16x8 is
+--    Port ( nCE : in STD_LOGIC; -- enable memory output
+--           nWE : in STD_LOGIC; -- read/write, read if nWE = 1, write if nWE = 0
+--           addr : in STD_LOGIC_VECTOR (3 downto 0); -- connected to memaddreg
+--           clk : in STD_LOGIC; --clock
+--           data : inout STD_LOGIC_VECTOR (7 downto 0)); -- connected to W bus
+--end component;
 
 component TmpReg is
     Port ( clk : in STD_LOGIC; -- clock
            nLt : in STD_LOGIC; -- load data from W bus
            Et : in STD_LOGIC; -- enable output data to W bus
-           wbus : inout STD_LOGIC_VECTOR (7 downto 0); -- connected to W bus
-           aluout : out STD_LOGIC_VECTOR (7 downto 0)); -- connected to ALU
+           wbus : inout STD_LOGIC_VECTOR (63 downto 0); -- connected to W bus
+           aluout : out STD_LOGIC_VECTOR (63 downto 0)); -- connected to ALU
 end component;
-component ram256x8 is
+--component ram256x8 is
+--    Port ( nCE : in STD_LOGIC; -- enable memory output
+--           nWE : in STD_LOGIC; -- read/write, read if nWE = 1, write if nWE = 0
+--           addr : in STD_LOGIC_VECTOR (7 downto 0); -- connected to memaddreg
+--           clk : in STD_LOGIC; --clock
+--           data : inout STD_LOGIC_VECTOR (7 downto 0)); -- connected to W bus
+--end component;
+component ram256x64 is
     Port ( nCE : in STD_LOGIC; -- enable memory output
-           nWE : in STD_LOGIC; -- read/write, read if nWE = 1, write if nWE = 0
+           nWE_byte : in STD_LOGIC; -- byte write
+           nWE_word : in STD_LOGIC; --word write
+           RD_byte : in STD_LOGIC; --byte mode = 1, word mode = 0
            addr : in STD_LOGIC_VECTOR (7 downto 0); -- connected to memaddreg
            clk : in STD_LOGIC; --clock
-           data : inout STD_LOGIC_VECTOR (7 downto 0)); -- connected to W bus
+           data : inout STD_LOGIC_VECTOR (63 downto 0)); -- connected to W bus
 end component;
 
 component flagReg is
@@ -154,8 +164,37 @@ component inreg is
            Eip : in STD_LOGIC;
            wbus : out STD_LOGIC_VECTOR(7 downto 0));
 end component;
-    signal wbus : STD_LOGIC_VECTOR(7 downto 0);
-    
+
+component keyreg is
+    Port ( keyIn : in STD_LOGIC_VECTOR (63 downto 0);
+           nLk : in STD_LOGIC;
+           clk : in STD_LOGIC;
+           keyOut : out STD_LOGIC_VECTOR (63 downto 0));
+end component;
+
+component textReg is
+    Port ( textIn : in STD_LOGIC_VECTOR (63 downto 0);
+           nLtxt : in STD_LOGIC;
+           clk : in STD_LOGIC;
+           textOut : out STD_LOGIC_VECTOR (63 downto 0));
+end component;
+
+component DES_unit is
+    Port ( text_in : in STD_LOGIC_VECTOR (63 downto 0);
+           key : in STD_LOGIC_VECTOR (63 downto 0);
+           clk : in STD_LOGIC;
+           rst : in STD_LOGIC;
+           en_des : in STD_LOGIC;
+           oe : in STD_LOGIC;
+           mode : in STD_LOGIC;
+           ready : out STD_LOGIC;
+           text_out : out STD_LOGIC_VECTOR (63 downto 0));
+end component;
+
+    signal wbus : STD_LOGIC_VECTOR(63 downto 0);
+    signal interrupts : STD_LOGIC_VECTOR(1 downto 0);
+    signal key : STD_LOGIC_VECTOR(63 downto 0);
+    signal txt : STD_LOGIC_VECTOR(63 downto 0);
     --PC
 --    signal Cp : STD_LOGIC;
 --    signal Ep : STD_LOGIC;
@@ -178,18 +217,18 @@ end component;
     
     --Register B
 --    signal nLb : STD_LOGIC;
-    signal tmpregout : STD_LOGIC_VECTOR(7 downto 0);
+    signal tmpregout : STD_LOGIC_VECTOR(63 downto 0);
     
     --Register I
 --    signal nLi : STD_LOGIC;
 --    signal nEi : STD_LOGIC;
-    signal inst : STD_LOGIC_VECTOR(7 downto 0);
+    signal inst : STD_LOGIC_VECTOR(7  downto 0);
     
     --Output register
 --    signal nLo : STD_LOGIC;
-    signal ain : STD_LOGIC_VECTOR(7 downto 0);
+    signal ain : STD_LOGIC_VECTOR(63 downto 0);
     --Controller
-    signal cbus : STD_LOGIC_VECTOR(23 downto 0);
+    signal cbus : STD_LOGIC_VECTOR(30 downto 0);
     signal nClr : STD_LOGIC;
     signal nClk : STD_LOGIC;
     
@@ -197,17 +236,31 @@ end component;
     signal ctrlFlagIn : STD_LOGIC_VECTOR(3 downto 0);
 --    signal nWE : STD_LOGIC := '1';
 
+   alias DES_Done : STD_LOGIC is interrupts(0);
+    alias UART : STD_LOGIC is interrupts(1);
+     alias oe_des : STD_LOGIC is cbus(30);
+    alias rst_des : STD_LOGIC is cbus(29);
+    alias en_des : STD_LOGIC is cbus(28);
+    alias DES_mode : STD_LOGIC is cbus(27);
+    alias nLtxt : STD_LOGIC is cbus(26); --load text
+    alias nLk : STD_LOGIC is cbus(25); --load key reg
+    alias RD_byte : STD_LOGIC is cbus(24);
+    alias nWE_word : STD_LOGIC is cbus(23);
     alias Ep : STD_LOGIC is cbus(22);
     alias Cp : STD_LOGIC is cbus(21);
     alias nLp : STD_LOGIC is cbus(20);
     alias nLm : STD_LOGIC is cbus(19);
     alias nCE : STD_LOGIC is cbus(18);
-    alias nWE : STD_LOGIC is cbus(17);
+    alias nWE_byte : STD_LOGIC is cbus(17);
     alias nLi : STD_LOGIC is cbus(16);
     alias Ea : STD_LOGIC is cbus(15);
     alias nLa : STD_LOGIC is cbus(14);
     alias Eu : STD_LOGIC is cbus(13);
     alias U : STD_LOGIC_VECTOR is cbus(12 downto 9);
+    alias U3 : STD_LOGIC is cbus(12);
+    alias U2 : STD_LOGIC is cbus(11);
+    alias U1 : STD_LOGIC is cbus(10);
+    alias U0 : STD_LOGIC is cbus(9);
     alias Lf : STD_LOGIC is cbus(8);
     alias Et : STD_LOGIC is cbus(7);
     alias nLt : STD_LOGIC is cbus(6);
@@ -223,7 +276,7 @@ end component;
     alias Z : STD_LOGIC is aluFlagOut(1);
     alias S : STD_LOGIC is aluFlagOut(2);
     alias I : STD_LOGIC is ctrlFlagIn(3);
-    
+--    alias CRC_done : STD_LOGIC is flags(4);
 begin
     nClr <= not clr;
     nClk <= not clk;
@@ -233,6 +286,7 @@ begin
                              inst => inst,
                              flags => ctrlFlagIn,
                              cbus => cbus,
+                             interrupts => interrupts,
                              ready => ready,
                              nhlt => nhlt);
      ACC : accreg port map(
@@ -273,17 +327,17 @@ begin
                              clk => clk,
                              clr => clr,
                              nLi => nLi,
-                             wbus => wbus,
+                             wbus => wbus(7 downto 0),
                              inst => inst);
      MAR : memaddreg port map(
                              clk => clk,
                              nLm => nLm,
-                             wbus => wbus,
+                             wbus => wbus(7 downto 0),
                              memaddr => memaddr);
      OUTREG_Module : outreg port map(
                              clk => clk,
                              nLo => nLo,
-                             wbus => wbus,
+                             wbus => wbus(7 downto 0),
                              dispout => dispout);
      PC_Unit : PC port map(
                              nclk => nClk,
@@ -291,19 +345,46 @@ begin
                              Ep => Ep,
                              Cp => Cp,
                              nLp => nLp,
-                             wbus => wbus);
-     RAM : ram256x8 port map(
-                             nCE => nCE,
-                             nWE => nWE,
-                             addr => memaddr,
-                             clk => clk,
-                             data => wbus);
+                             wbus => wbus(7 downto 0));
+--     RAM : ram256x8 port map(
+--                             nCE => nCE,
+--                             nWE => nWE,
+--                             addr => memaddr,
+--                             clk => clk,
+--                             data => wbus);
+     RAM : ram256x64 port map(
+                         nCE => nCE,
+                         RD_byte => RD_byte,
+                         nWE_byte => nWE_byte,
+                         nWE_word => nWE_word,
+                         addr => memaddr,
+                         clk => clk,
+                         data => wbus);
     IN_REG : inreg port map(
                              data => input,
                              clk => clk,
                              Eip => Eip,
-                             wbus => wbus); 
-                             
+                             wbus => wbus(7 downto 0)); 
+    KEY_REG : keyreg port map(
+                            keyIn => wbus,
+                            nLk => nLk,
+                            clk => clk,
+                            keyOut => key);
+    TXT_REG : textReg port map (
+                            textIn => wbus,
+                            nLtxt => nLtxt,
+                            clk => clk,
+                            textOut => txt);
+    DES : DES_Unit port map(
+                            text_in => txt,
+                            key => key,
+                            clk => clk,
+                            rst => rst_des,
+                            en_des => en_des,
+                            oe => oe_des,
+                            mode => DES_mode,
+                            ready => DES_done,
+                            text_out => wbus);                       
     I <= interrupt;
     process (clk) begin
         if rising_edge(clk) then

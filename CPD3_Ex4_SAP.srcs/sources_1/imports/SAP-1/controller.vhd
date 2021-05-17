@@ -15,7 +15,8 @@ entity controller is
            nclr : in STD_LOGIC; -- reset controller
            inst : in STD_LOGIC_VECTOR (7 downto 0); -- connected to ireg
            flags : in STD_LOGIC_VECTOR (3 downto 0); --connected to flag register
-           cbus : out STD_LOGIC_VECTOR (23 downto 0); -- control bus output
+           interrupts : in STD_LOGIC_VECTOR (1 downto 0);
+           cbus : out STD_LOGIC_VECTOR (30 downto 0); -- control bus output
            ready : out STD_LOGIC;
            nhlt : out STD_LOGIC); -- CPU halt signal
 end controller;
@@ -44,12 +45,22 @@ architecture sap1 of controller is
     alias S : STD_LOGIC is flags(2);
     alias I : STD_LOGIC is flags(3);
     
+    alias DES_Done : STD_LOGIC is interrupts(0);
+    alias UART : STD_LOGIC is interrupts(1);
+    alias oe_des : STD_LOGIC is cbus(30);
+    alias rst_des : STD_LOGIC is cbus(29);
+    alias en_des : STD_LOGIC is cbus(28);
+    alias DES_mode : STD_LOGIC is cbus(27);
+    alias nLtxt : STD_LOGIC is cbus(26); --load text
+    alias nLk : STD_LOGIC is cbus(25); --load key reg
+    alias RD_byte : STD_LOGIC is cbus(24);
+    alias nWE_word : STD_LOGIC is cbus(23);
     alias Ep : STD_LOGIC is cbus(22);
     alias Cp : STD_LOGIC is cbus(21);
     alias nLp : STD_LOGIC is cbus(20);
     alias nLm : STD_LOGIC is cbus(19);
     alias nCE : STD_LOGIC is cbus(18);
-    alias nWE : STD_LOGIC is cbus(17);
+    alias nWE_byte : STD_LOGIC is cbus(17);
     alias nLi : STD_LOGIC is cbus(16);
     alias Ea : STD_LOGIC is cbus(15);
     alias nLa : STD_LOGIC is cbus(14);
@@ -85,6 +96,8 @@ architecture sap1 of controller is
             ORIANI5, ORIANI6, ORIANI7,
             RRC5,
             DEC5,
+            DESEnc5,
+            MovAKey5, MovAKey6,
             HLT);
     
     type ins_cycle_count is array(7 downto 0) of integer;
@@ -111,7 +124,11 @@ begin
             nLt <= '1';
             nLa <= '1';
             nLi <= '1';
-            nWE <= '1';
+            nWE_byte <= '1';
+            nWE_word <= '1';
+            nLk <= '1';
+            nLtxt <= '1';
+            
             nCE <= '1';
             nLm <= '1';
             nLp <= '1';
@@ -119,12 +136,14 @@ begin
             
             
             case state is 
+                
                 when FETCH1 =>
                     count_trackers(singleInsCycleCount) <= count_trackers(singleInsCycleCount) + 1;
                     singleInsCycleCount <= 1;
                     instructionCount <= instructionCount + 1;
                     nLm <= '0';
                     Ep <= '1';
+                    
                     ready_sig <= '0';
                     state <= FETCH2;
                 when FETCH2 =>
@@ -133,6 +152,7 @@ begin
                 when FETCH3 =>
                     nLi <= '0';
                     nCE <= '0';
+                    RD_byte <= '1';
                     state <= DECODE4;
                 when DECODE4 =>
                     case inst is
@@ -242,11 +262,33 @@ begin
                                 ready_sig <= '1';
                             end if; 
                             state <= FETCH1;
+                        when x"F0" =>
+                            --DESEncrypt
+                            en_des <= '1';
+                            DES_mode <= '1';
+                            state <= FETCH1;
+                        when x"F2" =>
+                            --MOV KEY, A
+                            nLk <= '0';
+                            Ea <= '1';
+                            state <= FETCH1;                            
+                        when x"F3" =>
+                            --MOV TXT, A
+                            nLtxt <= '0';
+                            Ea <= '1';
+                            state <= FETCH1;
+                        when x"F4" =>
+                            --MOV A, DESOUT
+                            oe_des <= '1';
+                            nLa <= '0';
+                            state <= FETCH1;     
+                        --Load plain text
                         when x"FF" =>
                             state <= HLT;
                         when others =>
                             state <= FETCH1;
                     end case;
+               
                 when RRC5 =>
                     Lf <= '0';
                     if C = '1' then
@@ -262,6 +304,7 @@ begin
                     state <= LDA6;
                 when LDA6 =>
                     nLm <= '0';
+                    RD_byte <= '1';
                     nCE <= '0';
                     state <= LDA7;
                 when LDA7 =>
@@ -273,10 +316,11 @@ begin
                     state <= STA6;
                 when STA6 =>
                     nLm <= '0';
+                    RD_byte <= '1';
                     nCE <= '0';
                     state <= STA7;
                 when STA7 =>
-                    nWE <= '0';
+                    nWE_byte <= '0';
                     nCE <= '0';
                     Ea <= '1';
                     state <= FETCH1;

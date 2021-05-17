@@ -38,6 +38,7 @@ entity DES_datapath is
            round : in STD_LOGIC_VECTOR(3 downto 0);
            des_ctrl : in STD_LOGIC_VECTOR (8 downto 0);
            text_in : in STD_LOGIC_VECTOR (63 downto 0);
+           oe : in STD_LOGIC; --output enable
            text_out : out STD_LOGIC_VECTOR (63 downto 0));
 end DES_datapath;
 
@@ -100,6 +101,7 @@ architecture Behavioral of DES_datapath is
     component DES_OutReg is
     Port ( D : in STD_LOGIC_VECTOR (63 downto 0);
            en_out : in STD_LOGIC;
+           oe : in STD_LOGIC; --output enable
            clk : in STD_LOGIC;
            Q : out STD_LOGIC_VECTOR (63 downto 0));
     end component;
@@ -177,6 +179,7 @@ begin
      INV_PERM : DES_InversePermutation port map(perm_in => swap_out,
                                                 perm => inv_perm_out);
      OUT_REG : DES_OutReg port map(D => inv_perm_out,
+                                   oe => oe,
                                    clk => clk,
                                    en_out => en_out,
                                    Q => text_out);                                                                  

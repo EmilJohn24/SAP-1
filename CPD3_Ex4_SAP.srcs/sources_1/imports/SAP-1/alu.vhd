@@ -14,14 +14,14 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity alu is
     Port ( Eu : in STD_LOGIC; -- enable output
            U : in STD_LOGIC_VECTOR(3 downto 0); -- operation
-           ain : in STD_LOGIC_VECTOR (7 downto 0); -- connected to accreg
-           bin : in STD_LOGIC_VECTOR (7 downto 0); -- connected to breg
+           ain : in STD_LOGIC_VECTOR (63 downto 0); -- connected to accreg
+           bin : in STD_LOGIC_VECTOR (63 downto 0); -- connected to breg
            flags : out STD_LOGIC_VECTOR (3 downto 0); --flags
-           wbus : out STD_LOGIC_VECTOR (7 downto 0)); -- connected to W bus
+           wbus : out STD_LOGIC_VECTOR (63 downto 0)); -- connected to W bus
 end alu;
 
 architecture sap1 of alu is
-    signal result : STD_LOGIC_VECTOR (8 downto 0) := (others => '0');
+    signal result : STD_LOGIC_VECTOR (64 downto 0) := (others => '0');
     alias C : STD_LOGIC is flags(0);
     alias Z : STD_LOGIC is flags(1);
     alias S : STD_LOGIC is flags(2);
@@ -29,8 +29,8 @@ architecture sap1 of alu is
     
 begin
 alu_proc : process (U, ain, bin) is
-    variable ain9 : STD_LOGIC_VECTOR(8 downto 0);
-    variable bin9 : STD_LOGIC_VECTOR(8 downto 0);
+    variable ain9 : STD_LOGIC_VECTOR(64 downto 0);
+    variable bin9 : STD_LOGIC_VECTOR(64 downto 0);
     begin
         ain9 := '0' & ain;
         bin9 := '0' & bin;
@@ -66,9 +66,9 @@ alu_proc : process (U, ain, bin) is
                 result <= (others => '0');
         end case;
     end process;
-    wbus <= result(7 downto 0) when Eu = '1' else (others => 'Z');
-    C <= result(8);
-    Z <= '1' when result(7 downto 0) = "00000000" else '0';
-    S <= result(7);
+    wbus <= result(63 downto 0) when Eu = '1' else (others => 'Z');
+    C <= result(64);
+    Z <= '1' when result(63 downto 0) = "00000000" else '0';
+    S <= result(63);
     I <= 'Z';
 end sap1;

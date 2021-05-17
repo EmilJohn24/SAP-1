@@ -14,12 +14,12 @@ entity accreg is
     Port ( clk : in STD_LOGIC; -- clock
            Ea : in STD_LOGIC; -- enable output
            nLa : in STD_LOGIC; -- load data from W bus
-           wbus : inout STD_LOGIC_VECTOR (7 downto 0) := (others => 'Z'); -- connected to W bus
-           aluout : out STD_LOGIC_VECTOR (7 downto 0)); -- connected to ALU
+           wbus : inout STD_LOGIC_VECTOR (63 downto 0) := (others => 'Z'); -- connected to W bus
+           aluout : out STD_LOGIC_VECTOR (63 downto 0)); -- connected to ALU
 end accreg;
 
 architecture sap1 of accreg is
-    signal acc_reg : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
+    signal acc_reg : STD_LOGIC_VECTOR (63 downto 0) := (others => '0');
 begin
 accreg_proc : process (clk) is
     begin

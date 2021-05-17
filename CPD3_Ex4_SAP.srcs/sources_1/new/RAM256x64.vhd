@@ -23,15 +23,15 @@ end ram256x64;
 architecture sap1 of ram256x64 is
     type RAM_type is array (0 to 2**addr'length - 1) of std_logic_vector (7 downto 0);
     signal RAM : RAM_type := (
-                             0 => x"10",
-                            1 => x"32",
-                            2 => x"40",
-                            3 => x"28",
-                            4 => x"10",
-                            5 => x"33",
-                            6 => x"40",
-                            7 => x"28",
-                            8 => x"10",
+                            0 => x"10",
+                            1 => x"40",
+                            2 => x"F2",
+                            3 => x"10",
+                            4 => x"48",
+                            5 => x"F3",
+                            6 => x"F0",
+                            7 => x"D0",
+                            8 => x"07",
                             9 => x"34",
                             10 => x"40",
                             11 => x"28",
@@ -77,6 +77,25 @@ architecture sap1 of ram256x64 is
                             55 => x"06",
                             56 => x"00",
                             57 => x"00",
+                            64 => x"12",
+                            65 => x"34", 
+                            --62 => 56ABCD132536",
+                            66 => x"56",
+                            67 => x"AB",
+                            68 => x"CD",
+                            69 => x"13",
+                            70 => x"25",
+                            71 => x"36",
+                            72 => x"AA",
+                            73 => x"BB",
+                            74 => x"09",
+                            75 => x"18",
+                            76 => x"27",
+                            77 => x"36",
+                            78 => x"CC",
+                            79 => x"DD",
+                             
+--                            68 to 75 => x"AABB09182736CCDD",
                            others => "00000000"                         
                            );
   signal dataIn : STD_LOGIC_VECTOR(63 downto 0);
@@ -89,24 +108,18 @@ begin
     offset <= addr(2 downto 0);
     word_addr <= addr(7 downto 3) & "000";
     readMode <= nWE_byte nor nWE_word;   
-    ram_proc : process (nCE, nWE_word, nWE_byte, clk) is 
-        variable address : integer;
-        variable word_address : integer;
+    ram_proc : process (nCE, nWE_word, RD_byte, nWE_byte, clk) is 
+        
         begin
-            if rising_edge(clk) then
-            end if;
-            word_address := to_integer(unsigned(word_addr));
-            address := to_integer(unsigned(addr));
-            if readMode = '1' and nCE = '0' then
-                if RD_byte = '0' then --read word
-                    dataOut <= RAM(to_integer(unsigned(word_addr))) & RAM(to_integer(unsigned(word_addr)) + 1) & 
-                            RAM(to_integer(unsigned(word_addr)) + 2) & RAM(to_integer(unsigned(word_addr)) + 3) & 
-                            RAM(to_integer(unsigned(word_addr)) + 4) & RAM(to_integer(unsigned(word_addr)) + 5) &  
-                            RAM(to_integer(unsigned(word_addr)) + 6) & RAM(to_integer(unsigned(word_addr)) + 7);
-                elsif RD_byte = '1' then
-                    dataOut(7 downto 0) <= RAM(to_integer(unsigned(addr)));
-                    dataOut(63 downto 8) <= (others => 'Z');
-                end if;
+            if RD_byte = '0' then --read word
+                dataOut <= RAM(to_integer(unsigned(word_addr))) & RAM(to_integer(unsigned(word_addr)) + 1) & 
+                        RAM(to_integer(unsigned(word_addr)) + 2) & RAM(to_integer(unsigned(word_addr)) + 3) & 
+                        RAM(to_integer(unsigned(word_addr)) + 4) & RAM(to_integer(unsigned(word_addr)) + 5) &  
+                        RAM(to_integer(unsigned(word_addr)) + 6) & RAM(to_integer(unsigned(word_addr)) + 7);
+--                elsif RD_byte = '1' then
+            else
+                dataOut(7 downto 0) <= RAM(to_integer(unsigned(addr)));
+                dataOut(63 downto 8) <= (others => 'Z');
             end if;
             if nWE_byte = '0' and readMode = '0' and nCE = '0'  then -- write
                 RAM(to_integer(unsigned(addr))) <= dataIn(7 downto 0);
@@ -122,6 +135,6 @@ begin
                 
             end if;
         end process;
-        dataIn <= data when nWE_byte = '0' or nWE_word = '0' else (others => 'Z');
-        data <= dataOut when nCE = '0' and readMode = '1' else (others => 'Z');
+        dataIn <= data when nCE = '0' and (nWE_byte = '0' or nWE_word = '0') else (others => 'Z');
+        data <= dataOut when nCE = '0' and (nWE_byte = '1' and nWE_word = '1') else (others => 'Z');
  end sap1;

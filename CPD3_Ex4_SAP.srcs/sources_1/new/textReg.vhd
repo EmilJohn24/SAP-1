@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 16.05.2021 16:22:26
+-- Create Date: 17.05.2021 11:56:00
 -- Design Name: 
--- Module Name: DES_OutReg - Behavioral
+-- Module Name: textReg - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,27 +31,25 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity DES_OutReg is
-    Port ( D : in STD_LOGIC_VECTOR (63 downto 0);
-           en_out : in STD_LOGIC;
-           oe : in STD_LOGIC; --output enable
+entity textReg is
+    Port ( textIn : in STD_LOGIC_VECTOR (63 downto 0);
+           nLtxt : in STD_LOGIC;
            clk : in STD_LOGIC;
-           Q : out STD_LOGIC_VECTOR (63 downto 0));
-end DES_OutReg;
+           textOut : out STD_LOGIC_VECTOR (63 downto 0));
+end textReg;
 
-architecture Behavioral of DES_OutReg is
-signal des_outreg : STD_LOGIC_VECTOR(63 downto 0);
+architecture Behavioral of textReg is
+    signal text_reg : STD_LOGIC_VECTOR(63 downto 0);
 begin
-    Q <= des_outreg when oe = '1' else (others => 'Z');
-    OUT_REG : process(clk) is
+    textOut <= text_reg;
+    TEXTREG_PROC : process(clk) is
     begin
         if rising_edge(clk) then
-            if en_out = '1' then
-                des_outreg <= D;
+            if nLtxt = '0' then
+                text_reg <= textIn;
             end if;
-        
         end if;
-        
-    end process;
     
+    end process;
+
 end Behavioral;
