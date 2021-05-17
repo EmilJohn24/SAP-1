@@ -2,32 +2,203 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sat May  8 11:27:47 2021
-# Process ID: 10576
-# Current directory: D:/Learning/LBYCPD3/SAP-1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent716 D:\Learning\LBYCPD3\SAP-1\CPD3_Ex4_SAP.xpr
-# Log file: D:/Learning/LBYCPD3/SAP-1/vivado.log
-# Journal file: D:/Learning/LBYCPD3/SAP-1\vivado.jou
+# Start of session at: Mon May 17 17:15:04 2021
+# Process ID: 5148
+# Current directory: D:/SAP-1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18920 D:\SAP-1\CPD3_Ex4_SAP.xpr
+# Log file: D:/SAP-1/vivado.log
+# Journal file: D:/SAP-1\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.xpr
-INFO: [Project 1-313] Project file moved from 'C:/Users/Emil John Lopez/CPD3_Ex5_SAP' since last save.
-WARNING: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.gen/sources_1', nor could it be found using path 'C:/Users/Emil John Lopez/CPD3_Ex5_SAP/CPD3_Ex4_SAP.gen/sources_1'.
+open_project D:/SAP-1/CPD3_Ex4_SAP.xpr
+INFO: [Project 1-313] Project file moved from 'D:/Learning/LBYCPD3/SAP-1' since last save.
+WARNING: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'D:/SAP-1/CPD3_Ex4_SAP.gen/sources_1', nor could it be found using path 'D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.gen/sources_1'.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Programs/Xilinx/Vivado/2020.2/data/ip'.
-open_project: Time (s): cpu = 00:00:25 ; elapsed = 00:00:21 . Memory (MB): peak = 989.949 ; gain = 0.000
+open_project: Time (s): cpu = 00:00:24 ; elapsed = 00:00:11 . Memory (MB): peak = 1005.078 ; gain = 0.000
 update_compile_order -fileset sources_1
-close [ open D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_datapath.vhd w ]
-add_files D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_datapath.vhd
-close [ open D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_unit.vhd w ]
-add_files D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_unit.vhd
-close [ open D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_keygen.vhd w ]
-add_files D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_keygen.vhd
-close [ open D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_controller.vhd w ]
-add_files D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_controller.vhd
-update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SAP-1/CPD3_Ex4_SAP.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'SAP1_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/SAP-1/CPD3_Ex4_SAP.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj SAP1_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_DataSwapping.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DES_DataSwapping'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_Expansion.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DES_Expansion'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_InitialPermutation.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DES_InitialPermutation'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_InversePermutation.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DES_InversePermutation'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_Mux.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DES_Mux31b_2to1'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_OutReg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DES_OutReg'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_Permutation.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DES_Permutation'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_Reg32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DES_Reg32'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_SBoxes.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DES_SBoxes'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DES_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_datapath.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DES_datapath'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_keygen.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DES_keygen'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DES_unit'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/RAM256x64.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ram256x64'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/SAP1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SAP1'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/TmpReg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TmpReg'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/accreg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'accreg'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/alu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'alu'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/breg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'breg'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/creg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'creg'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/flagReg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'flagReg'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/inreg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'inreg'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/ireg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ireg'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/keyreg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'keyreg'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/mareg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'memaddreg'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/outreg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'outreg'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/pc.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'pc'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/textReg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'textReg'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SAP-1/CPD3_Ex4_SAP.srcs/sim_1/new/SAP1_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SAP1_tb'
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1005.078 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/SAP-1/CPD3_Ex4_SAP.sim/sim_1/behav/xsim'
+"xelab -wto 289434e2e2ac403fae3bc18eb19e3e33 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot SAP1_tb_behav xil_defaultlib.SAP1_tb -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Programs/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 289434e2e2ac403fae3bc18eb19e3e33 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot SAP1_tb_behav xil_defaultlib.SAP1_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture sap1 of entity xil_defaultlib.controller [controller_default]
+Compiling architecture sap1 of entity xil_defaultlib.accreg [accreg_default]
+Compiling architecture sap1 of entity xil_defaultlib.alu [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.flagReg [flagreg_default]
+Compiling architecture sap1 of entity xil_defaultlib.breg [breg_default]
+Compiling architecture sap1 of entity xil_defaultlib.creg [creg_default]
+Compiling architecture sap1 of entity xil_defaultlib.TmpReg [tmpreg_default]
+Compiling architecture sap1 of entity xil_defaultlib.ireg [ireg_default]
+Compiling architecture sap1 of entity xil_defaultlib.memaddreg [memaddreg_default]
+Compiling architecture sap1 of entity xil_defaultlib.outreg [outreg_default]
+Compiling architecture sap1 of entity xil_defaultlib.pc [pc_default]
+Compiling architecture sap1 of entity xil_defaultlib.ram256x64 [ram256x64_default]
+Compiling architecture behavioral of entity xil_defaultlib.inreg [inreg_default]
+Compiling architecture behavioral of entity xil_defaultlib.keyreg [keyreg_default]
+Compiling architecture behavioral of entity xil_defaultlib.textReg [textreg_default]
+Compiling architecture behavioral of entity xil_defaultlib.DES_InitialPermutation [des_initialpermutation_default]
+Compiling architecture behavioral of entity xil_defaultlib.DES_Mux31b_2to1 [des_mux31b_2to1_default]
+Compiling architecture behavioral of entity xil_defaultlib.DES_Reg32 [des_reg32_default]
+Compiling architecture behavioral of entity xil_defaultlib.DES_Expansion [des_expansion_default]
+Compiling architecture behavioral of entity xil_defaultlib.DES_keygen [des_keygen_default]
+Compiling architecture behavioral of entity xil_defaultlib.DES_SBoxes [des_sboxes_default]
+Compiling architecture behavioral of entity xil_defaultlib.DES_Permutation [des_permutation_default]
+Compiling architecture behavioral of entity xil_defaultlib.DES_DataSwapping [des_dataswapping_default]
+Compiling architecture behavioral of entity xil_defaultlib.DES_InversePermutation [des_inversepermutation_default]
+Compiling architecture behavioral of entity xil_defaultlib.DES_OutReg [des_outreg_default]
+Compiling architecture behavioral of entity xil_defaultlib.DES_datapath [des_datapath_default]
+Compiling architecture behavioral of entity xil_defaultlib.DES_controller [des_controller_default]
+Compiling architecture behavioral of entity xil_defaultlib.DES_unit [des_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.SAP1 [sap1_default]
+Compiling architecture bench of entity xil_defaultlib.sap1_tb
+Built simulation snapshot SAP1_tb_behav
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1005.078 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/SAP-1/CPD3_Ex4_SAP.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "SAP1_tb_behav -key {Behavioral:sim_1:Functional:SAP1_tb} -tclbatch {SAP1_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source SAP1_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+xsim: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 1005.078 ; gain = 0.000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'SAP1_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1005.078 ; gain = 0.000
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/SAP1_tb/uut/DES/CONTROL/state}} 
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/SAP1_tb/uut/DES/DATAPATH/OUT_REG/des_outreg}} 
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SAP-1/CPD3_Ex4_SAP.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'SAP1_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/SAP-1/CPD3_Ex4_SAP.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj SAP1_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/SAP-1/CPD3_Ex4_SAP.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/SAP-1/CPD3_Ex4_SAP.sim/sim_1/behav/xsim'
+"xelab -wto 289434e2e2ac403fae3bc18eb19e3e33 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot SAP1_tb_behav xil_defaultlib.SAP1_tb -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Programs/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 289434e2e2ac403fae3bc18eb19e3e33 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot SAP1_tb_behav xil_defaultlib.SAP1_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 1005.078 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Sat May  8 14:07:13 2021...
+INFO: [Common 17-206] Exiting Vivado at Mon May 17 17:20:00 2021...

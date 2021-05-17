@@ -1,0 +1,33 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat May  8 11:27:47 2021
+# Process ID: 10576
+# Current directory: D:/Learning/LBYCPD3/SAP-1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent716 D:\Learning\LBYCPD3\SAP-1\CPD3_Ex4_SAP.xpr
+# Log file: D:/Learning/LBYCPD3/SAP-1/vivado.log
+# Journal file: D:/Learning/LBYCPD3/SAP-1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/Emil John Lopez/CPD3_Ex5_SAP' since last save.
+WARNING: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.gen/sources_1', nor could it be found using path 'C:/Users/Emil John Lopez/CPD3_Ex5_SAP/CPD3_Ex4_SAP.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Programs/Xilinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:25 ; elapsed = 00:00:21 . Memory (MB): peak = 989.949 ; gain = 0.000
+update_compile_order -fileset sources_1
+close [ open D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_datapath.vhd w ]
+add_files D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_datapath.vhd
+close [ open D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_unit.vhd w ]
+add_files D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_unit.vhd
+close [ open D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_keygen.vhd w ]
+add_files D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_keygen.vhd
+close [ open D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_controller.vhd w ]
+add_files D:/Learning/LBYCPD3/SAP-1/CPD3_Ex4_SAP.srcs/sources_1/new/DES_controller.vhd
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat May  8 14:07:13 2021...
