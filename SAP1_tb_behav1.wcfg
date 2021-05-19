@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="SAP1_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="SAP1_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="261001fs"></ZoomEndTime>
+      <Cursor1Time time="1684500fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="210"></NameColumnWidth>
+      <ValueColumnWidth column_width="96"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="21" />
+   <wvobject fp_name="/SAP1_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/clr" type="logic">
+      <obj_property name="ElementShortName">clr</obj_property>
+      <obj_property name="ObjectShortName">clr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/nhlt" type="logic">
+      <obj_property name="ElementShortName">nhlt</obj_property>
+      <obj_property name="ObjectShortName">nhlt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/input" type="array">
+      <obj_property name="ElementShortName">input[7:0]</obj_property>
+      <obj_property name="ObjectShortName">input[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/interrupt" type="logic">
+      <obj_property name="ElementShortName">interrupt</obj_property>
+      <obj_property name="ObjectShortName">interrupt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/dispout" type="array">
+      <obj_property name="ElementShortName">dispout[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dispout[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/stop_the_clock" type="other">
+      <obj_property name="ElementShortName">stop_the_clock</obj_property>
+      <obj_property name="ObjectShortName">stop_the_clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/clock_period" type="other">
+      <obj_property name="ElementShortName">clock_period</obj_property>
+      <obj_property name="ObjectShortName">clock_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/PC_Unit/prog_count" type="array">
+      <obj_property name="ElementShortName">prog_count[7:0]</obj_property>
+      <obj_property name="ObjectShortName">prog_count[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/MAR/mar_reg" type="array">
+      <obj_property name="ElementShortName">mar_reg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mar_reg[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/CONTROL/interrupts" type="array">
+      <obj_property name="ElementShortName">interrupts[1:0]</obj_property>
+      <obj_property name="ObjectShortName">interrupts[1:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/CONTROL/state" type="other">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/ACC/acc_reg" type="array">
+      <obj_property name="ElementShortName">acc_reg[63:0]</obj_property>
+      <obj_property name="ObjectShortName">acc_reg[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/DES/CONTROL/state" type="other">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/DES/CONTROL/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/CONTROL/interrupt_states" type="array">
+      <obj_property name="ElementShortName">interrupt_states[1:0]</obj_property>
+      <obj_property name="ObjectShortName">interrupt_states[1:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/SP/stack_count" type="array">
+      <obj_property name="ElementShortName">stack_count[7:0]</obj_property>
+      <obj_property name="ObjectShortName">stack_count[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/RAM/RAM[224]" type="array">
+      <obj_property name="ElementShortName">[224][7:0]</obj_property>
+      <obj_property name="ObjectShortName">[224][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/CREG_Module/c_reg" type="array">
+      <obj_property name="ElementShortName">c_reg[63:0]</obj_property>
+      <obj_property name="ObjectShortName">c_reg[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SAP1_tb/uut/TXT_REG/text_reg" type="array">
+      <obj_property name="ElementShortName">text_reg[63:0]</obj_property>
+      <obj_property name="ObjectShortName">text_reg[63:0]</obj_property>
+   </wvobject>
+</wave_config>

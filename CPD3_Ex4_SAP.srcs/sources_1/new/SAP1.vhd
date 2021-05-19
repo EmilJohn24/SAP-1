@@ -51,7 +51,7 @@ component controller is
            inst : in STD_LOGIC_VECTOR (7 downto 0); -- connected to ireg
            flags : in STD_LOGIC_VECTOR (3 downto 0); --connected to flags
            interrupts : in STD_LOGIC_VECTOR (1 downto 0);
-           cbus : out STD_LOGIC_VECTOR (30 downto 0); -- control bus output
+           cbus : out STD_LOGIC_VECTOR (34 downto 0); -- control bus output
            ready : out STD_LOGIC; --input ready signal
            nhlt : out STD_LOGIC); -- CPU halt signal
 end component;
@@ -191,6 +191,15 @@ component DES_unit is
            text_out : out STD_LOGIC_VECTOR (63 downto 0));
 end component;
 
+component StackPointer is
+    Port ( clk : in STD_LOGIC; -- clock
+           nclr : in STD_LOGIC; -- reset count
+           Esp : in STD_LOGIC; -- enable output
+           SPi : in STD_LOGIC; -- increment count
+           SPd : in STD_LOGIC; --decrement sp
+           nLsp : in STD_LOGIC; --enable load
+           wbus : inout STD_LOGIC_VECTOR (7 downto 0)); -- connected to W bus
+end component;
     signal wbus : STD_LOGIC_VECTOR(63 downto 0);
     signal interrupts : STD_LOGIC_VECTOR(1 downto 0);
     signal key : STD_LOGIC_VECTOR(63 downto 0);
@@ -228,7 +237,7 @@ end component;
 --    signal nLo : STD_LOGIC;
     signal ain : STD_LOGIC_VECTOR(63 downto 0);
     --Controller
-    signal cbus : STD_LOGIC_VECTOR(30 downto 0);
+    signal cbus : STD_LOGIC_VECTOR(34 downto 0);
     signal nClr : STD_LOGIC;
     signal nClk : STD_LOGIC;
     
@@ -238,6 +247,10 @@ end component;
 
    alias DES_Done : STD_LOGIC is interrupts(0);
     alias UART : STD_LOGIC is interrupts(1);
+    alias Esp : STD_LOGIC is cbus(34);
+    alias SPi : STD_LOGIC is cbus(33);
+    alias SPd : STD_LOGIC is cbus(32);
+    alias nLsp : STD_LOGIC is cbus(31);
      alias oe_des : STD_LOGIC is cbus(30);
     alias rst_des : STD_LOGIC is cbus(29);
     alias en_des : STD_LOGIC is cbus(28);
@@ -384,11 +397,21 @@ begin
                             oe => oe_des,
                             mode => DES_mode,
                             ready => DES_done,
-                            text_out => wbus);                       
+                            text_out => wbus); 
+
+    SP : StackPointer port map(
+                            clk => clk,
+                            nclr => nclr,
+                            Esp => Esp,
+                            SPi => SPi,
+                            SPd => SPd,
+                            nLsp => nLsp,
+                            wbus => wbus(7 downto 0));
+                          
     I <= interrupt;
     process (clk) begin
         if rising_edge(clk) then
-        
+            
         end if;
     end process;                                
                              

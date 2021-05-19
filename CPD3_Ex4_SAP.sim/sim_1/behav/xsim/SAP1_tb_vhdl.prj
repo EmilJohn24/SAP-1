@@ -15,6 +15,7 @@ vhdl xil_defaultlib  \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/new/DES_unit.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/new/RAM256x64.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/new/SAP1.vhd" \
+"../../../../CPD3_Ex4_SAP.srcs/sources_1/new/StackPointer.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/new/TmpReg.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/accreg.vhd" \
 "../../../../CPD3_Ex4_SAP.srcs/sources_1/imports/SAP-1/alu.vhd" \

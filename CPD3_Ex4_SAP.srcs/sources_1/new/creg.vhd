@@ -18,7 +18,7 @@ entity creg is
 end creg;
 
 architecture sap1 of creg is
-    signal c_reg : STD_LOGIC_VECTOR (63 downto 0) := (others => '0');
+    signal c_reg : STD_LOGIC_VECTOR (63 downto 0) := x"00000000000000FF";
 begin
 creg_proc : process (clk) is
     begin
